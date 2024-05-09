@@ -1,0 +1,80 @@
+%% 
+%% This is file `gsuthesis.sty',
+%% 
+\NeedsTeXFormat{LaTeX2e}[1996/06/01]
+
+\setlength{\topmargin}{49.5pt}
+\setlength{\textheight}{625pt}
+\setlength{\oddsidemargin}{36pt}
+\setlength{\textwidth}{432pt}
+\setlength{\marginparsep}{0pt}
+\setlength{\marginparwidth}{0pt}
+
+%\setlength{\paperwidth}{8.5in}
+%\setlength{\paperheight}{11in}
+%\setlength{\topmargin}{0in}
+%\setlength{\headheight}{.5in}
+%\setlength{\textheight}{8.5in}
+%\setlength{\oddsidemargin}{.5in}
+%\setlength{\evensidemargin}{.5in}
+%\setlength{\textwidth}{6in}
+%\setlength{\marginparsep}{0cm}
+%\setlength{\marginparwidth}{0cm}
+
+\renewcommand{\@oddhead}{\hfil\textrm{\thepage}}
+\renewcommand{\@oddfoot}{}
+\renewcommand{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi
+                    \thispagestyle{plain}
+                    \global\@topnum\z@
+                    \@afterindentfalse
+                    \secdef\@chapter\@schapter}
+\renewcommand{\listoffigures}{
+    \if@twocolumn
+      \@restonecoltrue\onecolumn
+    \else
+      \@restonecolfalse
+    \fi
+    \chapter*{\listfigurename
+      \@mkboth{\MakeUppercase\listfigurename}
+              {\MakeUppercase\listfigurename}}
+    \addcontentsline{toc}{chapter}{\numberline{}\listfigurename}
+    \@starttoc{lof}
+    \if@restonecol\twocolumn\fi
+    }
+\renewcommand{\listoftables}{
+    \if@twocolumn
+      \@restonecoltrue\onecolumn
+    \else
+      \@restonecolfalse
+    \fi
+    \chapter*{\listtablename
+      \@mkboth{\MakeUppercase\listtablename}
+              {\MakeUppercase\listtablename}}
+    \addcontentsline{toc}{chapter}{\numberline{}\listtablename}
+    \@starttoc{lot}
+    \if@restonecol\twocolumn\fi
+    }
+\newlength{\captionwidth}
+\setlength{\captionwidth}{400pt}
+\long\def\@custommakecaption#1#2{%
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{#1: #2}%
+  \ifdim \wd\@tempboxa >\captionwidth
+    \begin{center}\parbox[t]{\captionwidth}{#1: #2}\end{center}
+  \else
+    \global \@minipagefalse
+    \hb@xt@\captionwidth{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip}
+\renewcommand{\caption}{
+    \refstepcounter\@captype \@dblarg{\@customcaption\@captype}
+}
+\long\def\@customcaption#1[#2]#3{\par\addcontentsline{\csname
+  ext@#1\endcsname}{#1}{\protect\numberline{\csname
+  the#1\endcsname}{\ignorespaces #2}}\begingroup
+    \@parboxrestore
+    \small
+    \@custommakecaption{\csname fnum@#1\endcsname}{\ignorespaces #3}\par
+  \endgroup}
+%% 
+%% End of file `gsuthesis.sty'.

@@ -1,0 +1,36 @@
+# LaTeX build files
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+
+# LaTeX output files
+# *.pdf
+*.dvi
+*.ps
+
+# LaTeX editor files
+*.synctex.gz
+*.synctex.gz(busy)
+*.synctex.gz(busy)*
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+
+# LaTeX temporary files
+*.backup
+*.bak
+*.swp
+*.tmp
+
+# LaTeX generated files
+/_minted-*/
+
+# LaTeX project-specific files to ignore
+# Add any project-specific files or directories to ignore here

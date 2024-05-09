@@ -1,0 +1,24 @@
+\chapter{CHAPTER 2 TITLE}
+
+Hooray for Chapter 2!!!
+
+Sample Figures and Tables below.
+
+And as an example of citing things, I'm going to cite a brilliant paper - \citep{jones_2016}. See bibliography.bib for doing references.
+
+\begin{figure*}
+	\includegraphics[height =5in]{./Plots/nature.jpg}
+	\caption{An individual figure!}
+\end{figure*}
+        
+\begin{figure*}[h]
+	\subfloat[\label{fig:HD8538_ellplot}]{\includegraphics[height =2.5in]{./Plots/nature.jpg}} 
+	\subfloat[\label{fig:HD8538_phot}]{\includegraphics[height =2.5in]{./Plots/rocks.jpg}} \\
+	\subfloat[\label{fig:HD8538_vis}]{\includegraphics[height =2.5in]{./Plots/rocks.jpg}}
+	\subfloat[\label{fig:HD8538_HRD}]{\includegraphics[height =2.5in]{./Plots/nature.jpg}}
+	\caption{Multiple figures!}
+\end{figure*}
+
+
+
+\input{./Tables/Sample_Table.tex}

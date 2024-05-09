@@ -1,0 +1,288 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  dissertation.tex, to be compiled with latex2e.                   %
+%%  16 April 2012                                                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                   %
+%%  Writing a Doctoral Dissertation with LaTeX at                    %
+%%           Georgia State University                                %
+%%                                                                   %
+%%  (Running this ``template'' will generate the documentation.)     %
+%%                                                                   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\documentclass[12pt,gsu,online,openright,doubleside]{gsudiss}
+\documentclass[12pt,gsu,online,openany,singleside,hidelinks]{gsudiss}
+\usepackage{natbib}
+%\usepackage{subfigure}                % To format bibliographies.
+%% \usepackage{aastex}
+\setlength{\bibsep}{0pt}           % Necessary for bib entries to have
+                                   % correct line spacing.
+\usepackage{tocloft}
+\usepackage[hidelinks]{hyperref}
+
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0},
+}
+
+
+\renewcommand{\cftfigfont}{Figure\ }
+\renewcommand{\cfttabfont}{Table\ }
+\renewcommand{\cftchapfont}{\bfseries}
+\renewcommand{\cftsecfont}{\bfseries}
+\renewcommand{\cftsubsecfont}{\bfseries\itshape}
+\renewcommand{\cftsubsubsecfont}{\itshape}
+\renewcommand{\cftparafont}{\mdseries}
+
+\usepackage{lscape}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{deluxetable}
+%\usepackage{aastex_hack}
+\usepackage{longtable,ltcaption}
+\usepackage{float}
+\usepackage[caption = false]{subfig}
+% The ltcaption package supports \CaptionLabelFont & \CaptionTextFont
+% introduced by the NTG document classes
+\renewcommand\CaptionLabelFont{\normalsize}
+\renewcommand\CaptionTextFont{\normalsize}
+\usepackage{aas}                   % Some abbreviations for AAS references.
+\citestyle{aa}                     % Astronomy & Astrophysics cite style.
+\usepackage{eucal}                 % Euler fonts for equations.
+\usepackage{verbatim}              % Allows quoting source with commands.
+\usepackage{graphicx}              % For powerful manipulation of figures.
+\usepackage{amsmath,amsthm,amsfonts,amsopn,amssymb} % Some nice math packages.
+\usepackage{ctable}                % My preference table package.
+\usepackage[overlay]{textpos}      % Put stuff anywhere, I mean anywhere ...
+\usepackage{pstricks}              % Draw stuff especially on top figures etc...
+\usepackage{afterpage}             % Useful for absolute placement of figures and tables.
+\usepackage{longtable} % for 'longtable' environment
+\usepackage{pdflscape} % for 'landscape' environment
+
+%\input{figures}                    % My defined figures, see the file "figures.tex".
+\input{usercommands}               % User defined commands go in this
+                                   % file called "usercommands.tex".
+                                   % Of course you can rename it.
+\usepackage{float}
+\floatstyle{boxed}
+\newfloat{code}{h}{ext}
+\floatname{code}{Code}
+
+
+\usepackage{fancyvrb}
+\DefineVerbatimEnvironment{code}{Verbatim}{fontsize=\small}
+\DefineVerbatimEnvironment{example}{Verbatim}{fontsize=\small}
+
+
+
+
+\usepackage{atbeginend}            % Modify space before and after
+                                   % equations. These are my preferences.
+\AfterBegin{equation}{\addtolength{\abovedisplayskip}{-0.5\baselineskip}}
+\BeforeEnd{equation}{\addtolength{\belowdisplayskip}{-0.5\baselineskip}}
+\AfterBegin{equation*}{\addtolength{\abovedisplayskip}{-0.5\baselineskip}}
+\BeforeEnd{equation*}{\addtolength{\belowdisplayskip}{-0.5\baselineskip}}
+
+\renewcommand{\topfraction}{0.85}        % These modify figure placement on
+\renewcommand{\bottomfraction}{0.85}     % the page and various other space
+\renewcommand{\textfraction}{0.10}       % requirements for figures.
+\renewcommand{\floatpagefraction}{0.80}  % These 5 lines are not
+\renewcommand{\arraystretch}{0.5}        % necessary but I think its better
+                                         % than latex default.
+
+\setlength{\tabcolsep}{3pt}        % shrink column spacing so your tables 
+                                   % can be wider (yay Todd Tables)
+%\setlength{\LTcapwidth}{\textwidth}% so your rotated, normal-sized
+                                   % longtable titles won't wrap oddly.
+
+
+
+\clubpenalty=1000                  % Make Latex try hard to fix
+\widowpenalty=1000                 % "stray lines" in paragraphs,
+                                   % i.e. paragraph that begin at the
+                                   % last line of a page, or end with
+                                   % the last line on the following
+                                   % page. This looks silly.
+\raggedbottom
+
+\settocname{TABLE OF CONTENTS}              % Set the "Table of Contents"
+                                   % name. This is the default. You
+                                   % can use "Table of Contents" for example.
+
+\setlofname{LIST OF FIGURES}               % Change the name from 'List of
+                                   % Figures'. Use whatever you wish.
+
+\setlotname{LIST OF TABLES}                % Change the name from 'List of
+                                   % Tables'. Use whatever suit your
+                                   % fancy.
+
+\settocbibname{REFERENCES}         % Change the name from
+                                   % 'Bibliography'. Change it back if
+                                   % you feel like it.
+
+\setloaname{LIST OF ABBREVIATIONS}
+                                   % I Changed the name from 'List of
+                                   % Abbreviations'. Use any name that
+                                   % makes sense here. If you don't
+                                   % have an "abbreviations.tex" file,
+                                   % this command will do nothing.
+
+\setfigname{Figure\ }               % Set the caption labels for figures.
+
+\settabname{Table\ }                % Set the caption labels for tables.
+
+\setcapfont{pnc}                   % Set the caption font for
+                                   % both tables and figures.
+
+\chapternumsize{\normalsize}            % You can use any standard latex sizes here.
+\chapterheadsize{\normalsize}           % You can use any standard latex sizes here.
+\chaptertitlesize{\normalsize}           % You can use any standard latex sizes here.
+                                   % These defaults look good to me.
+
+\beforechapterheadname{CHAPTER}         % Optional text to put in front of
+                                   % the chapter number.
+\afterchapterheadname{}          % Optional text to put after the
+                                   % chapter number. The default
+                                   % looks like this: --1--. Of course
+                                   % you can change this to any
+                                   % format, for e.g. $\sim$
+
+\chapterheadpos{center}            % You can use 'right', 'left',
+                                   % 'center'.
+
+\chaptertitlepos{center}           % You can use 'right', 'left',
+                                   % 'center'
+
+\chapterheadverticalspace{-1em}     % The space between the Chapter head
+                                   % and the top of page. This distance
+                                   % is not absolute, but relative to
+                                   % the parameters set by the
+                                   % geometry package. Play around
+                                   % with this number to suit your needs.
+
+\chapterbetweentitlespace{-1.em}   % The space between the chapter head
+                                   % and the title head.
+
+\titleheadverticalspace{2em}       % The space between the title head
+                                   % and the text.
+
+\sectiontitlesize{\normalsize}          % This is obvious.
+\sectiontitlepos{left}             % Obvious.
+
+\sectiontitleverticalspace{1em}    % The space between the section head
+                                   % and the text.
+
+\subsectiontitlesize{\normalsize}       % Obvious.
+\subsectiontitlepos{left}          % Obvious.
+
+\subsectiontitleverticalspace{0.5em} % You get the idea...
+
+\subsubsectiontitlesize{\normalsize}
+\subsubsectiontitlepos{left}
+
+\subsubsectiontitleverticalspace{0.5em}
+
+\sepabbrev{7em}                    % The space between the abbreviation
+                                   % lists, that is, if you have
+                                   % one. Has to be >= 5em.
+
+\prettify{pnc}
+
+\printdraft{\textcolor{gray}\small DRAFT}    % In order to use this
+                                   % command, you have to enable "drafts"
+                                   % in the option of the gsudiss
+                                   % class, otherwise it does
+                                   % nothing. This prints the word
+                                   % "DRAFT" in gray color in the header of your
+                                   % dissertation. You can go wild
+                                   % here if you want. Just make sure
+                                   % you disable the draft option
+                                   % before final printing.
+
+\author(First Name Last Name)              % Name required.
+
+\title(Manuscript Title)    % Title of dissertation Required.
+
+\titlesize(12)(12)                               % This is for changing
+                                             % the default font size
+                                             % for your title. The
+                                             % first argument is the
+                                             % font size, the second
+                                             % is the line spacing for
+                                             % long tiles that wrap to
+                                             % more than one line.
+                                             % Default is equivalent
+                                             % to the \LARGE command,
+                                             % which is roughly (22)(22).
+
+% \committee: The first parenthesis must contain your supervisor name.
+%         You can have two supervisors, in which case, the
+%         second supervisor goes into the square brackets, next to the
+%         first. If you have one like me, then leave the second entry blank, like below. The
+%         rest of the parentheses contains the rest of your committee members. You
+%         can have up to six entries, NOT including your supervisor(s). My
+%         school requires five or four. I have five (5) members
+%         below. Note that there is no need to put the "Dr." title in front of any of the names.
+% Adjust margins to 1.0in on all sides
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\committee(First Name Last Name)[] % Committee CHAIR's First Name Last Name.Only the first and last name of your committee chair should be listed here.  Please do not include their titles.  In other words, do not list “Dr.” or “Ph.D.” here.
+          (First Name Last Name) % Committee MEMBER's First Name Last Name. Only the first and last name of your committee members should be listed here.  Please do not include their titles.  In other words, do not list “Dr.” or “Ph.D.” here
+          (First Name Last Name)
+          (First Name Last Name)
+          (First Name Last Name)
+
+\department(Department of Physics and Astronomy)
+
+
+
+
+                                   
+
+\departmenttitle(Chair)            
+
+
+
+\graduationyear(YEAR)  %  The date here must be the month and year of your graduation—not the month and year of your submission or upload.            
+
+
+
+
+
+\graduationmonth(Month) % The date here must be the month and year of your graduation—not the month and year of your submission or upload.     
+
+
+
+\newcommand\omicron{o}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%               The dissertation starts here.                        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\include{TitleAbstract}            % See the TitleAbstract.tex file
+\include{frontmatter}              % See the frontmatter.tex file
+
+\pagestyle{plain}
+\mainmatter                        % Main chapters starts here
+\include{./Chapters/Chapter_1}
+\include{./Chapters/Chapter_2}
+\include{./Chapters/Chapter_3}
+
+
+\appendix
+\section*{Appendices}
+\addcontentsline{toc}{section}{Appendices}
+\renewcommand{\thesubsection}{\Alph{subsection}}
+
+\include{./Chapters/Appendix_A}
+\include{./Chapters/Appendix_B}
+
+\include{backmatter}               % See the backmatter.tex file
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%               The dissertation ends here.                          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
