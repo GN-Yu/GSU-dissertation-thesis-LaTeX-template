@@ -10,11 +10,12 @@
 %%                                                                   %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\documentclass[12pt,gsu,online,openright,doubleside]{gsudiss}
-\documentclass[12pt,gsu,online,openany,singleside,hidelinks]{gsudiss}
+\documentclass[12pt,gsu,online,openany,hidelinks]{gsudiss}
+% Remove the option "online" to produce a print version (page number at the center of the footer)
+
 \usepackage{natbib}
-%\usepackage{subfigure}                % To format bibliographies.
-%% \usepackage{aastex}
+% \usepackage{subfigure}                % To format bibliographies.
+
 \setlength{\bibsep}{0pt}           % Necessary for bib entries to have
                                    % correct line spacing.
 \usepackage{tocloft}
@@ -38,7 +39,6 @@
 \usepackage{geometry}
 \usepackage{array}
 \usepackage{deluxetable}
-%\usepackage{aastex_hack}
 \usepackage{longtable,ltcaption}
 \usepackage{float}
 \usepackage[caption = false]{subfig}
@@ -46,8 +46,7 @@
 % introduced by the NTG document classes
 \renewcommand\CaptionLabelFont{\normalsize}
 \renewcommand\CaptionTextFont{\normalsize}
-\usepackage{aas}                   % Some abbreviations for AAS references.
-\citestyle{aa}                     % Astronomy & Astrophysics cite style.
+
 \usepackage{eucal}                 % Euler fonts for equations.
 \usepackage{verbatim}              % Allows quoting source with commands.
 \usepackage{graphicx}              % For powerful manipulation of figures.
@@ -74,8 +73,6 @@
 \DefineVerbatimEnvironment{example}{Verbatim}{fontsize=\small}
 
 
-
-
 \usepackage{atbeginend}            % Modify space before and after
                                    % equations. These are my preferences.
 \AfterBegin{equation}{\addtolength{\abovedisplayskip}{-0.5\baselineskip}}
@@ -94,7 +91,6 @@
                                    % can be wider (yay Todd Tables)
 %\setlength{\LTcapwidth}{\textwidth}% so your rotated, normal-sized
                                    % longtable titles won't wrap oddly.
-
 
 
 \clubpenalty=1000                  % Make Latex try hard to fix
@@ -226,31 +222,19 @@
 % Adjust margins to 1.0in on all sides
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\committee(First Name Last Name)[] % Committee CHAIR's First Name Last Name.Only the first and last name of your committee chair should be listed here.  Please do not include their titles.  In other words, do not list “Dr.” or “Ph.D.” here.
-          (First Name Last Name) % Committee MEMBER's First Name Last Name. Only the first and last name of your committee members should be listed here.  Please do not include their titles.  In other words, do not list “Dr.” or “Ph.D.” here
+\committee(First Name Last Name)[] % Committee CHAIR's First Name Last Name.Only the first and last name of your committee chair should be listed here. Please do not include their titles. In other words, do not list “Dr.” or “Ph.D.” here.
+          (First Name Last Name) % Committee MEMBER's First Name Last Name. Only the first and last name of your committee members should be listed here. Please do not include their titles. In other words, do not list “Dr.” or “Ph.D.” here
           (First Name Last Name)
           (First Name Last Name)
-          (First Name Last Name)
+          (First Name Last Name)%
 
 \department(Department of Physics and Astronomy)
 
+\departmenttitle(Chair) % Don't change this
 
+\graduationyear(Year)  
 
-
-                                   
-
-\departmenttitle(Chair)            
-
-
-
-\graduationyear(YEAR)  %  The date here must be the month and year of your graduation—not the month and year of your submission or upload.            
-
-
-
-
-
-\graduationmonth(Month) % The date here must be the month and year of your graduation—not the month and year of your submission or upload.     
-
+\graduationmonth(Month) % The Month and Year here must be the month and year of your graduation—not the month and year of your submission or upload. 
 
 
 \newcommand\omicron{o}

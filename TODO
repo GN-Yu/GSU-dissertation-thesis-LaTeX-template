@@ -1,0 +1,7 @@
+Some tasks:
+1. Move `.sty` file to a folder
+2. Change the typeout at release
+3. Remove \departmenttitle(Chair) from main.tex and fix it in gsudiss.cls
+4. Remove \department()
+5. Fix appendix appearance in TOC
+6. Separate the style of doctoral dissertation and master's thesis
