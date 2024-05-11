@@ -624,30 +624,30 @@
 %    \cleardoublepage
 }{}}
 
-%------------------------Abstract Head------------------------------------
-\renewenvironment{abstract}{
-  \begin{center}
-     {\chaptertitleheadsize\formatting ABSTRACT \vspace{0.2in}}
-  \end{center}
-}{}
+% %------------------------Abstract Head------------------------------------
+% \renewenvironment{abstract}{
+%   \begin{center}
+%      {\chaptertitleheadsize\formatting ABSTRACT \vspace{0.2in}}
+%   \end{center}
+% }{}
 
-%------------------------Abstract Page------------------------------------
-\def\abstractpage{\pagenumbering{gobble}
-  \begin{center}
-    \parbox[]{\textwidth}{\setstretch{2}\centering\titlefontsize\titlediss}
-  \end{center}
-  \vspace{0.4in}
-  \centerline{by} \vspace*{0.5in}
-  \centerline{\writer} \vspace*{0.5in}
-  \centerline{Under the Direction of \supervisor, PhD}
-  \vspace{1.0in}
-  \begin{abstract}
-    \input{Frontmatter/abstract}
-  \end{abstract}\\[0.5in]
-  \noindent \parbox[t]{0.25\textwidth}{\setstretch{1} INDEX WORDS:} \hspace{3pt}
-  \parbox[t]{0.75\textwidth}{\setstretch{1}\input{Frontmatter/index-words}}
- % \cleardoublepage
-}
+% %------------------------Abstract Page------------------------------------
+% \def\abstractpage{\pagenumbering{gobble}
+%   \begin{center}
+%     \parbox[]{\textwidth}{\setstretch{2}\centering\titlefontsize\titlediss}
+%   \end{center}
+%   \vspace{0.4in}
+%   \centerline{by} \vspace*{0.5in}
+%   \centerline{\writer} \vspace*{0.5in}
+%   \centerline{Under the Direction of \supervisor, PhD}
+%   \vspace{1.0in}
+%   \begin{abstract}
+%     \input{Frontmatter/abstract}
+%   \end{abstract}\\[0.5in]
+%   \noindent \parbox[t]{0.25\textwidth}{\setstretch{1} INDEX WORDS:} \hspace{3pt}
+%   \parbox[t]{0.75\textwidth}{\setstretch{1}\input{Frontmatter/index-words}}
+%  % \cleardoublepage
+% }
 
 %------------------------Title Page---------------------------------------
 \def\titlepage{\pagenumbering{gobble}
