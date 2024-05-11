@@ -1,28 +1,42 @@
-\newcommand\arcdeg{\mbox{\ensuremath{^\circ}}}%
-\newcommand\arcmin{\mbox{\ensuremath{^\prime}}}%
-\newcommand\arcsec{\mbox{\ensuremath{^{\prime\prime}}}}%
-\newcommand{\point}{\mbox{\ensuremath{\!\!.}\thinspace}}
-\newcommand{\minusone}{\ensuremath{^{-1}}}
-\newcommand{\minustwo}{\ensuremath{^{-2}}}
-\newcommand{\minusthree}{\ensuremath{^{-3}}}
-\newcommand{\minusfive}{\ensuremath{^{-5}}}
-\newcommand{\plusthree}{\ensuremath{^{3}}}
-\newcommand{\plusfive}{\ensuremath{^{5}}}
-\newcommand{\kms}{\mbox{\ km\,s\ensuremath{^{-1}}}}
+%%%%% Template recommendations %%%%%
+
 \newcommand{\fig}{Figure~}
 \newcommand{\figs}{Figures~}
 \newcommand{\tab}{Table~}
 \newcommand{\tabs}{Tables~}
 \newcommand{\eqn}{Equation~}
 \newcommand{\eqns}{Equations~}
-\newcommand{\vracc}{\mbox{$\mathrm{v=kr}$}\xspace}
-\newcommand{\vrdec}{\mbox{$\mathrm{v=v_{max}-k^{'}(r-r_t)}$}\xspace}
-\newcommand{\vrootracc}{\mbox{$\mathrm{v=k_{1}\sqrt r}$}\xspace}
-\newcommand{\vrootrdec}{\mbox{$\mathrm{v=v_{max}-k_{2}\sqrt{r-r_t}}$}\xspace}
-\newcommand{\rlaw}{\mbox{$r\ $law}\xspace}
-\newcommand{\rootrlaw}{\mbox{$\sqrt r\ $law}\xspace}
-\newcommand{\resolvingpower}{\mbox{$\lambda/\Delta\lambda$}\xspace}
-\newcommand{\OIII}{\mbox{[\acs{O3}]}\xspace}
-\newcommand{\solarmass}{\mbox{\ M\ensuremath{_{\odot}}}}
-\newcommand{\arcpt}{${{\lower3pt\hbox{$^{\prime\prime}$}}\atop{\raise4pt\hbox{.}}}$}
-\newcommand{\msun}{$M_\odot$}
+\newcommand{\chap}{Chapter~}
+\newcommand{\chaps}{Chapters~}
+\newcommand{\sect}{Section~}
+\newcommand{\sects}{Sections~}
+
+
+%%%%% Math abbreviations examples %%%%%
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\DeclareMathAlphabet{\mathbit}{OT1}{cmr}{bx}{it}    % Define \mathbit{} to use Bold Italic for vectors rather than arrows.
+
+
+%%%%% Theorem environments examples %%%%%
+
+\newtheorem{defi}{Definition}[section]
+\newtheorem{thm}[defi]{Theorem}
+\newtheorem{axiom}[defi]{Axiom}
+\newtheorem{lemma}[defi]{Lemma}
+\newtheorem{claim}[defi]{Claim}
+\newtheorem{property}[defi]{Property}
+\newtheorem{notation}[defi]{Notation}
+\newtheorem{eg}{Example}
+\newtheorem{obs}[defi]{Observation}
+\newtheorem{prop}[defi]{Proposition}
+\newtheorem{coro}[defi]{Corollary}
+\newtheorem*{remark}{Remark}
+\newtheorem{question}[defi]{Question}
+\newtheorem{prob}[defi]{Problem}
+\newtheorem{conj}[defi]{Conjecture}
+\newtheorem{fact}[defi]{Fact}
+\newtheorem{case}[defi]{Case}

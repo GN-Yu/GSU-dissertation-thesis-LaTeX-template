@@ -15,25 +15,27 @@
 
 \usepackage{natbib}
 % \usepackage{subfigure}                % To format bibliographies.
-
 \setlength{\bibsep}{0pt}           % Necessary for bib entries to have
                                    % correct line spacing.
-\usepackage{tocloft}
-\usepackage[hidelinks]{hyperref}
 
+\usepackage[hidelinks]{hyperref}
 \hypersetup{
     colorlinks=false,
     pdfborder={0 0 0},
 }
 
-
+% Here is how you set the fonts for each section of the TOC
+\usepackage{tocloft}
 \renewcommand{\cftfigfont}{Figure\ }
 \renewcommand{\cfttabfont}{Table\ }
-\renewcommand{\cftchapfont}{\bfseries}
-\renewcommand{\cftsecfont}{\bfseries}
-\renewcommand{\cftsubsecfont}{\bfseries\itshape}
-\renewcommand{\cftsubsubsecfont}{\itshape}
-\renewcommand{\cftparafont}{\mdseries}
+\renewcommand{\cftchapfont}{\bfseries}  % Set the font for the chapters in TOC
+\renewcommand{\cftsecfont}{\normalfont} % Set the font for the sections in TOC, e.g., you can change it to \renewcommand{\cftsecfont}{\bfseries}
+\renewcommand{\cftsubsecfont}{\normalfont}  % Set the font for the subsections in TOC, e.g., you can change it to \renewcommand{\cftsubsecfont}{\bfseries\itshape}{\bfseries}
+\renewcommand{\cftsubsubsecfont}{\itshape}  % Set the font for the subsubsections in TOC
+\renewcommand{\cftparafont}{\mdseries}  % Set the font for the paragraphs in TOC
+
+\setcounter{tocdepth}{2}      % The depth of table of contents, the setting of 2 means it only goes to subsections, you can change it (e.g. 3 is to include subsubsections).
+
 
 \usepackage{lscape}
 \usepackage{geometry}
@@ -41,36 +43,39 @@
 \usepackage{deluxetable}
 \usepackage{longtable,ltcaption}
 \usepackage{float}
-\usepackage[caption = false]{subfig}
+\usepackage[caption = true]{subfig}
 % The ltcaption package supports \CaptionLabelFont & \CaptionTextFont
 % introduced by the NTG document classes
 \renewcommand\CaptionLabelFont{\normalsize}
 \renewcommand\CaptionTextFont{\normalsize}
 
+\usepackage{amsmath,amsthm,amsfonts,amsopn,amssymb} % Some nice math packages.
 \usepackage{eucal}                 % Euler fonts for equations.
 \usepackage{verbatim}              % Allows quoting source with commands.
 \usepackage{graphicx}              % For powerful manipulation of figures.
-\usepackage{amsmath,amsthm,amsfonts,amsopn,amssymb} % Some nice math packages.
 \usepackage{ctable}                % My preference table package.
 \usepackage[overlay]{textpos}      % Put stuff anywhere, I mean anywhere ...
 \usepackage{pstricks}              % Draw stuff especially on top figures etc...
 \usepackage{afterpage}             % Useful for absolute placement of figures and tables.
-\usepackage{longtable} % for 'longtable' environment
-\usepackage{pdflscape} % for 'landscape' environment
+\usepackage{longtable}             % for 'longtable' environment
+\usepackage{pdflscape}             % for 'landscape' environment
 
-%\input{figures}                    % My defined figures, see the file "figures.tex".
-\input{usercommands}               % User defined commands go in this
-                                   % file called "usercommands.tex".
-                                   % Of course you can rename it.
 \usepackage{float}
 \floatstyle{boxed}
 \newfloat{code}{h}{ext}
 \floatname{code}{Code}
 
-
 \usepackage{fancyvrb}
 \DefineVerbatimEnvironment{code}{Verbatim}{fontsize=\small}
 \DefineVerbatimEnvironment{example}{Verbatim}{fontsize=\small}
+
+% Use cases as:
+% \begin{code}
+% 	Your code here
+% \end{code}
+% \begin{example}
+% 	Your example here
+% \end{example}
 
 
 \usepackage{atbeginend}            % Modify space before and after
@@ -195,7 +200,7 @@
                                    % you disable the draft option
                                    % before final printing.
 
-\author(First Name Last Name)              % Name required.
+\author(FirstName LastName)              % Name required.
 
 \title(Manuscript Title)    % Title of dissertation Required.
 
@@ -211,6 +216,8 @@
                                              % to the \LARGE command,
                                              % which is roughly (22)(22).
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \committee: The first parenthesis must contain your supervisor name.
 %         You can have two supervisors, in which case, the
 %         second supervisor goes into the square brackets, next to the
@@ -221,49 +228,61 @@
 %         below. Note that there is no need to put the "Dr." title in front of any of the names.
 % Adjust margins to 1.0in on all sides
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\committee(First Name Last Name)[] % Committee CHAIR's First Name Last Name.Only the first and last name of your committee chair should be listed here. Please do not include their titles. In other words, do not list “Dr.” or “Ph.D.” here.
-          (First Name Last Name) % Committee MEMBER's First Name Last Name. Only the first and last name of your committee members should be listed here. Please do not include their titles. In other words, do not list “Dr.” or “Ph.D.” here
-          (First Name Last Name)
-          (First Name Last Name)
-          (First Name Last Name)%
+\committee(FirstName LastName)[] % Committee CHAIR's First Name Last Name.Only the first and last name of your committee chair should be listed here. Please do not include their titles. In other words, do not list “Dr.” or “Ph.D.” here.
+          (FirstName LastName) % Committee MEMBER's First Name Last Name. Only the first and last name of your committee members should be listed here. Please do not include their titles. In other words, do not list “Dr.” or “Ph.D.” here
+          (FirstName LastName)
+          (FirstName LastName)
+          (FirstName LastName)%
 
-\department(Department of Physics and Astronomy)
+% \department(Department of Physics and Astronomy)
 
-\departmenttitle(Chair) % Don't change this
+% \departmenttitle(Chair) % Don't change this
 
-\graduationyear(Year)  
+\graduationyear(Year)
 
 \graduationmonth(Month) % The Month and Year here must be the month and year of your graduation—not the month and year of your submission or upload. 
 
-
-\newcommand\omicron{o}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %               The dissertation starts here.                        %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\input{usercommands}               % You can put some self-defined
+                                   % commands in this file like
+                                   % math abbreviations, etc.
+
 \begin{document}
+
+%%%%%%%%%%%%%% The title, abstract and front matters %%%%%%%%%%%%%%%
+
 \include{TitleAbstract}            % See the TitleAbstract.tex file
 \include{frontmatter}              % See the frontmatter.tex file
 
+%%%%%%%%%%%%%%%%%%%% The main chapters %%%%%%%%%%%%%%%%%%%%%
+
 \pagestyle{plain}
 \mainmatter                        % Main chapters starts here
+
 \include{./Chapters/Chapter_1}
 \include{./Chapters/Chapter_2}
 \include{./Chapters/Chapter_3}
 
+%%%%%%%%%%%%%%%%%%%% The back matters %%%%%%%%%%%%%%%%%%%%%
 
 \appendix
-\section*{Appendices}
-\addcontentsline{toc}{section}{Appendices}
-\renewcommand{\thesubsection}{\Alph{subsection}}
 
-\include{./Chapters/Appendix_A}
-\include{./Chapters/Appendix_B}
+\include{./Chapters/Appendix} % Use this file if you have only one appendix.
+% \include{./Chapters/Appendices} % Use this file if you have more than one appendices.
 
-\include{backmatter}               % See the backmatter.tex file
 
+% The bibliography starts here.
+% Format the entries according to your department or discipline’s choice of style manual.
+
+\bibliographystyle{plain}           % Please learn to use the
+                                    % formatting of Latex's Bibtex. It
+                                    % will make your life easier.
+\bibliography{mybibliography.bib}   % "mybibliography.bib" contains some
+                                    % reference examples.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %               The dissertation ends here.                          %

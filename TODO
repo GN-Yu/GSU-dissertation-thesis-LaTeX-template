@@ -1,7 +1,11 @@
 Some tasks:
-1. Move `.sty` file to a folder
-2. Change the typeout at release
-3. Remove \departmenttitle(Chair) from main.tex and fix it in gsudiss.cls
-4. Remove \department()
-5. Fix appendix appearance in TOC
-6. Separate the style of doctoral dissertation and master's thesis
+1. Move `.sty` file to a folder?
+2. Separate the style of doctoral dissertation and master's thesis
+3. Organize front matter in the file tree
+
+Some thoughts:
+1. The whole document can be a user manual. Instructions and examples can be written in the chapters.
+
+At release:
+1. Change the typeout at release
+

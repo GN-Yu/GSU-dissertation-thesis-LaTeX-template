@@ -474,20 +474,20 @@
   {\ifthenelse{\equal{#2}{}}{\let\titlefontsize\LARGE}
     {\def\titlefontsize{\fontsize{#1}{#2}\selectfont}}}}
 
-\def\department{%
-  \@ifnextchar({\department@i}{\department@i(The department's name is required)}%)
-}
-\def\department@i(#1){%
-  \def\departmentname{#1}
-}
+% \def\department{%
+%   \@ifnextchar({\department@i}{\department@i(The department's name is required)}%)
+% }
+% \def\department@i(#1){%
+%   \def\departmentname{#1}
+% }
 
-\def\departmenttitle{%
-  \@ifnextchar({\departmenttitle@i}{\departmenttitle@i(The title of
-    your head of department is required)}%)
-}
-\def\departmenttitle@i(#1){%
-  \def\departmenttitlename{#1}
-}
+% \def\departmenttitle{%
+%   \@ifnextchar({\departmenttitle@i}{\departmenttitle@i(The title of
+%     your head of department is required)}%)
+% }
+% \def\departmenttitle@i(#1){%
+%   \def\departmenttitlename{#1}
+% }
 
 \def\graduationyear{%
   \@ifnextchar({\graduationyear@i}{\graduationyear@i(\number\year)}%)
@@ -556,27 +556,28 @@
     \ifthenelse{\equal{#7}{}}{}{\addtolength{\addedspace}{-0.38cm}}
     \ifthenelse{\equal{#8}{}}{}{\addtolength{\addedspace}{-0.38cm}}}
 
-  \def\signaturelines{%
-    \begin{center}
-      \signline\\
-      {Dr. #1}, Chair\\[0.4cm]
-      \signline\\
-      \ifthenelse{\equal{#2}{}}{}{{Dr. #2}, Chair\\[0.4cm]\signline\\}
-      {Dr. #3}, Member\\[0.4cm]
-      \signline\\
-      {Dr. #4}, Member\\[0.4cm]
-      \signline\\
-      {Dr. #5}, Member\\[0.4cm]
-      \signline\\
-      {Dr. #6}, Member\\[0.4cm]
-      \signline\\
-      \ifthenelse{\equal{#7}{}}{}{{Dr. #7}, Member\\[0.4cm]\signline\\}
-      \ifthenelse{\equal{#8}{}}{}{{Dr. #8}, Member\\[0.4cm]\signline\\}
-      Date\\[0.4cm]
-      \signline\\
-      {Dr. #9}, \departmenttitlename\\
-      \departmentname
-    \end{center}}}
+  % \def\signaturelines{%
+  %   \begin{center}
+  %     \signline\\
+  %     {Dr. #1}, Chair\\[0.4cm]
+  %     \signline\\
+  %     \ifthenelse{\equal{#2}{}}{}{{Dr. #2}, Chair\\[0.4cm]\signline\\}
+  %     {Dr. #3}, Member\\[0.4cm]
+  %     \signline\\
+  %     {Dr. #4}, Member\\[0.4cm]
+  %     \signline\\
+  %     {Dr. #5}, Member\\[0.4cm]
+  %     \signline\\
+  %     {Dr. #6}, Member\\[0.4cm]
+  %     \signline\\
+  %     \ifthenelse{\equal{#7}{}}{}{{Dr. #7}, Member\\[0.4cm]\signline\\}
+  %     \ifthenelse{\equal{#8}{}}{}{{Dr. #8}, Member\\[0.4cm]\signline\\}
+  %     Date\\[0.4cm]
+  %     \signline\\
+  %     {Dr. #9}, \departmenttitlename\\
+  %     \departmentname
+  %   \end{center}}
+    }
 
 %%%%%%%%%%% Definitions of front matter%%%%%%%%%%%%%%%%%%
 
@@ -616,7 +617,7 @@
           \parbox[]{\textwidth}{\setstretch{1.1}\centering\titlefontsize\titlediss\vspace*{\addedspace}}
           \parbox[]{\textwidth}{\setstretch{1}\certifyword\vspace*{\addedspace}}
           \parbox[]{\textwidth}{\setstretch{1.2}\centering\graduation\\by\\{\writer}\\committee:\vspace*{\addedspace}}
-          \parbox[]{\textwidth}{\setstretch{1}\signaturelines}
+          % \parbox[]{\textwidth}{\setstretch{1}\signaturelines}
         \end{center}
       \end{minipage}
     \end{center}
