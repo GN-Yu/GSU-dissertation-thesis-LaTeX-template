@@ -1,11 +1,21 @@
 Some tasks:
-1. Move `.sty` file to a folder?
+1. Move `.sty` file to a folder? Or better just make every package being included as up-to-date ones
 2. Separate the style of doctoral dissertation and master's thesis
 3. Organize front matter in the file tree
+4. Investigate "pnc" font
+5. figures and tables formate
 
 Some thoughts:
 1. The whole document can be a user manual. Instructions and examples can be written in the chapters.
 
+Examples and instructions include:
+1. reference to chapters and sections, recommend, \chap\ref{chap:label}
+2. citations
+3. how to include figures
+4. how to include tables
+
 At release:
 1. Change the typeout at release
+2. Change the beginning of the main.tex
+3. 
 
