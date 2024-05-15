@@ -4,6 +4,10 @@ Some tasks:
 3. Organize front matter in the file tree
 4. Investigate "pnc" font
 5. figures and tables formate
+6. check if he `\hspace*{1cm}` in front of both dedication and acknowledgement is the same as the document indent
+7. An example of the two or more lines title
+8. Investigate `\extraSpace` in `.cls` file
+9. what a mess at committee member part!!!!!
 
 Some thoughts:
 1. The whole document can be a user manual. Instructions and examples can be written in the chapters.

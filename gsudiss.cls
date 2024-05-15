@@ -52,9 +52,9 @@
 \RequirePackage{ifthen}
 \let\lspace\gsuspacing
 \def\abbrevskip{2.000}
-\def\printcertifypage{no}
+% \def\printcertifypage{no}
 \def\draftmode{no}
-\def\certifypage{}
+% \def\certifypage{}
 \def\print@draft{}
 \def\fontify{}
 \def\geo{no}
@@ -83,8 +83,8 @@
   \def\fontify{ptm}}
 \DeclareOption{charter}{%
   \def\fontify{bch}}
-\DeclareOption{certify}{%
-  \def\printcertifypage{no}}
+% \DeclareOption{certify}{%
+%   \def\printcertifypage{no}}
 \DeclareOption{drafts}{%
   \def\draftmode{yes}}
 \DeclareOption{pagenumtop}{%
@@ -423,14 +423,10 @@
 
 \titlespacing*{\section}{0pt}{1em}{\sectionheadspace}
 
-% For \subsection I have \bfseries\itshape (boldface italics)
-
-\titleformat{\subsection}{\singlespace\subsectionheadposition\bfseries\itshape\subsectionheadsizes\formatting}
+\titleformat{\subsection}{\singlespace\subsectionheadposition\bfseries\subsectionheadsizes\formatting}
 {\thesubsection}{0.5em}{}
 
 \titlespacing*{\subsection}{0pt}{1em}{\subsectionheadspace}
-
-% For \subsubsection I have \itshape (italics)
 
 \titleformat{\subsubsection}{\singlespace\itshape\subsectionheadsizes\formatting}
 {\thesubsubsection}{0.5em}{}
@@ -606,23 +602,23 @@
     Georgia State University\\
     \graduate\ \graduation}}
 
-%------------------------Committee Certification Page---------------------
-\ifthenelse{\equal{\printcertifypage}{yes}}{
-  \def\certifypage{\pagenumbering{gobble}
-    \enlargethispage{2cm}
-    \trick
-    \begin{center}
-      \begin{minipage}[]{\textwidth}
-        \begin{center}
-          \parbox[]{\textwidth}{\setstretch{1.1}\centering\titlefontsize\titlediss\vspace*{\addedspace}}
-          \parbox[]{\textwidth}{\setstretch{1}\certifyword\vspace*{\addedspace}}
-          \parbox[]{\textwidth}{\setstretch{1.2}\centering\graduation\\by\\{\writer}\\committee:\vspace*{\addedspace}}
-          % \parbox[]{\textwidth}{\setstretch{1}\signaturelines}
-        \end{center}
-      \end{minipage}
-    \end{center}
-%    \cleardoublepage
-}{}}
+% %------------------------Committee Certification Page---------------------
+% \ifthenelse{\equal{\printcertifypage}{yes}}{
+%   \def\certifypage{\pagenumbering{gobble}
+%     \enlargethispage{2cm}
+%     \trick
+%     \begin{center}
+%       \begin{minipage}[]{\textwidth}
+%         \begin{center}
+%           \parbox[]{\textwidth}{\setstretch{1.1}\centering\titlefontsize\titlediss\vspace*{\addedspace}}
+%           \parbox[]{\textwidth}{\setstretch{1}\certifyword\vspace*{\addedspace}}
+%           \parbox[]{\textwidth}{\setstretch{1.2}\centering\graduation\\by\\{\writer}\\committee:\vspace*{\addedspace}}
+%           % \parbox[]{\textwidth}{\setstretch{1}\signaturelines}
+%         \end{center}
+%       \end{minipage}
+%     \end{center}
+% %    \cleardoublepage
+% }{}}
 
 % %------------------------Abstract Head------------------------------------
 % \renewenvironment{abstract}{
@@ -665,15 +661,15 @@
 %  \cleardoublepage
 }
 
-%------------------------Copyright Page-----------------------------------
-\def\copyrightpage{\pagenumbering{gobble}
-  \vspace*{0.7\textheight}
-  \begin{center}
-    \parbox[]{\textwidth}{\setstretch{1}
-      \begin{center}Copyright by\\Your Name\\\graduation\end{center}}
-  \end{center}
-%  \cleardoublepage
-}
+% %------------------------Copyright Page-----------------------------------
+% \def\copyrightpage{\pagenumbering{gobble}
+%   \vspace*{0.7\textheight}
+%   \begin{center}
+%     \parbox[]{\textwidth}{\setstretch{1}
+%       \begin{center}Copyright by\\Your Name\\\graduation\end{center}}
+%   \end{center}
+% %  \cleardoublepage
+% }
 
 %------------------------Approval Page------------------------------------
 \def\approvalpage{\pagenumbering{gobble}
