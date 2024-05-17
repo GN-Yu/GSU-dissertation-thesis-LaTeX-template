@@ -8,16 +8,16 @@ And as an example of citing things, I'm going to cite one of our paper~\cite{LAC
 
 See \verb|bibliography.bib| for doing references.
 
-\begin{figure*}
-	\includegraphics[height =5in]{./Plots/nature.jpg}
+\begin{figure*}[ht]
+	\includegraphics[width=\textwidth]{./Plots/nature.jpg}
 	\caption{An individual figure!}
 \end{figure*}
         
-\begin{figure*}[h]
-	\subfloat[\label{fig:HD8538_ellplot}]{\includegraphics[height =2.5in]{./Plots/nature.jpg}} 
-	\subfloat[\label{fig:HD8538_phot}]{\includegraphics[height =2.5in]{./Plots/rocks.jpg}} \\
-	\subfloat[\label{fig:HD8538_vis}]{\includegraphics[height =2.5in]{./Plots/rocks.jpg}}
-	\subfloat[\label{fig:HD8538_HRD}]{\includegraphics[height =2.5in]{./Plots/nature.jpg}}
+\begin{figure*}[ht]
+	\subfloat[\label{fig:HD8538_ellplot}]{\includegraphics[width=.48\textwidth]{./Plots/nature.jpg}} 
+	\subfloat[\label{fig:HD8538_phot}]{\includegraphics[width=.48\textwidth]{./Plots/rocks.jpg}} \\
+	\subfloat[\label{fig:HD8538_vis}]{\includegraphics[width=.48\textwidth]{./Plots/rocks.jpg}}
+	\subfloat[\label{fig:HD8538_HRD}]{\includegraphics[width=.48\textwidth]{./Plots/nature.jpg}}
 	\caption{Multiple figures!}
 \end{figure*}
 

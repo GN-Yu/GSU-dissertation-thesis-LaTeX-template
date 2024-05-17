@@ -3,7 +3,7 @@ Some tasks:
 2. Separate the style of doctoral dissertation and master's thesis
 3. Organize front matter in the file tree
 4. Investigate "pnc" font
-5. figures and tables formate
+5. figures and tables format
 6. check if he `\hspace*{1cm}` in front of both dedication and acknowledgement is the same as the document indent
 7. An example of the two or more lines title
 8. Investigate `\extraSpace` in `.cls` file
@@ -11,6 +11,7 @@ Some tasks:
 
 Some thoughts:
 1. The whole document can be a user manual. Instructions and examples can be written in the chapters.
+2. Deleting `.bib` file most of the times solves the problem of bibliography. Not sure why there is problem
 
 Examples and instructions include:
 1. reference to chapters and sections, recommend, \chap\ref{chap:label}

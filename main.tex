@@ -59,24 +59,12 @@
 \usepackage{afterpage}             % Useful for absolute placement of figures and tables.
 \usepackage{longtable}             % for 'longtable' environment
 \usepackage{pdflscape}             % for 'landscape' environment
+\usepackage{fancyvrb}              % for verbatim environments (see usercommands.tex)
 
 \usepackage{float}
 \floatstyle{boxed}
 \newfloat{code}{h}{ext}
 \floatname{code}{Code}
-
-\usepackage{fancyvrb}
-\DefineVerbatimEnvironment{code}{Verbatim}{fontsize=\small}
-\DefineVerbatimEnvironment{example}{Verbatim}{fontsize=\small}
-
-% Use cases as:
-% \begin{code}
-% 	Your code here
-% \end{code}
-% \begin{example}
-% 	Your example here
-% \end{example}
-
 
 \usepackage{atbeginend}            % Modify space before and after
                                    % equations. These are my preferences.
@@ -236,7 +224,7 @@
 
 \graduationyear(Year)
 
-\graduationmonth(Month) % The Month and Year here must be the month and year of your graduation—not the month and year of your submission or upload. 
+\graduationmonth(Month) % The Month and Year here must be the month and year of your graduation—not the month and year of your submission or upload.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
