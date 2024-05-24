@@ -11,4 +11,5 @@ Goal:
 1. Minimal, as simple as possible
 2. easy to maintain and update
 3. annotated clearly
+4. make "the problems I had" not "the problems you will have"
 

@@ -2,6 +2,13 @@
 % If you want to write multiple sections in the appendix, it's better also use Appendices.tex 
 
 \chapter*{APPENDIX}
+\label{chap:appendix}
 \addcontentsline{toc}{chapter}{APPENDIX}
 
-This is the appendix!
+This is the appendix! You can actually have a phantom section in the appendix like the following and refer to it in your text like this: \hyperref[sec:appendix_phantom_section]{Appendix}.
+
+\phantomsection
+\section*{A phantom section title in the appendix}
+\label{sec:appendix_phantom_section}
+
+However, you probably want to use \verb|Appendices.tex| instead of this file if you really have multiple appendices instead of separating phantom sections.

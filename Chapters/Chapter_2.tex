@@ -1,4 +1,5 @@
 \chapter{CHAPTER 2 TITLE}
+\label{chap:chapter_2}
 
 Hooray for Chapter 2!!!
 
@@ -8,18 +9,37 @@ And as an example of citing things, I'm going to cite one of our paper~\cite{LAC
 
 See \verb|bibliography.bib| for doing references.
 
-\begin{figure*}[ht]
-	\includegraphics[width=\textwidth]{./Plots/nature.jpg}
+\begin{figure*}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./Plots/nature.jpg}
 	\caption{An individual figure!}
 \end{figure*}
         
 \begin{figure*}[ht]
-	\subfloat[\label{fig:HD8538_ellplot}]{\includegraphics[width=.48\textwidth]{./Plots/nature.jpg}} 
-	\subfloat[\label{fig:HD8538_phot}]{\includegraphics[width=.48\textwidth]{./Plots/rocks.jpg}} \\
-	\subfloat[\label{fig:HD8538_vis}]{\includegraphics[width=.48\textwidth]{./Plots/rocks.jpg}}
-	\subfloat[\label{fig:HD8538_HRD}]{\includegraphics[width=.48\textwidth]{./Plots/nature.jpg}}
+	\centering
+	\subfloat[\label{fig:HD8538_ellplot}]{\includegraphics[width=.4\textwidth]{./Plots/nature.jpg}} 
+	\subfloat[\label{fig:HD8538_phot}]{\includegraphics[width=.4\textwidth]{./Plots/rocks.jpg}} \\
+	\subfloat[\label{fig:HD8538_vis}]{\includegraphics[width=.4\textwidth]{./Plots/rocks.jpg}}
+	\subfloat[\label{fig:HD8538_HRD}]{\includegraphics[width=.4\textwidth]{./Plots/nature.jpg}}
 	\caption{Multiple figures!}
 \end{figure*}
 
+You can have a table like this:
+\begin{table}[h!]
+	\centering
+	\label{tab:simple_table}
+	\caption{A simple table}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\textbf{ID} & \textbf{Name} & \textbf{Course} \\
+		\hline
+		1 & John Doe & Mathematics \\
+		2 & Jane Smith & Physics \\
+		3 & Mary Johnson & Chemistry \\
+		\hline
+	\end{tabular}
+\end{table}
 
-\input{./Tables/Sample_Table.tex}
+You can also include a wide table like this:
+
+\input{./Tables/Sample_Wide_Table.tex}

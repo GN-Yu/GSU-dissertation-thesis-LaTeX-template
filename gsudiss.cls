@@ -36,7 +36,7 @@
 \typeout{for Georgia State University Ph.D. dissertations.}
 \typeout{This class file was developed to conform to the requirements}
 \typeout{of the Graduate Office for the College of Arts and Sciences}
-  \typeout{at Georgia State University for the year 2006. Since the}
+\typeout{at Georgia State University for the year 2006. Since the}
 \typeout{requirements change slightly from year to year, it is up to the}
 \typeout{writer/author of his/her dissertation to make sure that such}
 \typeout{requirements are always met. The author of this class file}
@@ -310,11 +310,6 @@
   \ifthenelse{\equal{\onlinesubmission}{yes}}
   {\def\formatting{}}{\def\formatting{\fontfamily{#1}\selectfont}}}
 
-%%%%%%%%%%%%%%%%%%%%
-\newlength{\extraSpace}
-\setlength{\extraSpace}{2.5em} % Adjust the value as needed
-%%%%%%%%%%%%%%%%%%%%
-
 \RequirePackage[pagestyles]{titlesec}
 \setcounter{secnumdepth}{3}
 \newpagestyle{main}[]{
@@ -470,21 +465,6 @@
   {\ifthenelse{\equal{#2}{}}{\let\titlefontsize\LARGE}
     {\def\titlefontsize{\fontsize{#1}{#2}\selectfont}}}}
 
-% \def\department{%
-%   \@ifnextchar({\department@i}{\department@i(The department's name is required)}%)
-% }
-% \def\department@i(#1){%
-%   \def\departmentname{#1}
-% }
-
-% \def\departmenttitle{%
-%   \@ifnextchar({\departmenttitle@i}{\departmenttitle@i(The title of
-%     your head of department is required)}%)
-% }
-% \def\departmenttitle@i(#1){%
-%   \def\departmenttitlename{#1}
-% }
-
 \def\graduationyear{%
   \@ifnextchar({\graduationyear@i}{\graduationyear@i(\number\year)}%)
 }
@@ -502,9 +482,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %        Process information for Committee Certification page        %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\def\signline{%
-  \rule{0.5\paperwidth}{0.1pt}}
 
 \def\committee{%
   \@ifnextchar({\committee@i}{\committee@i(Albert Einstein [supervisor])}%)
@@ -534,91 +511,63 @@
   \@ifnextchar[{\committee@ix(#1)[#2](#3)(#4)(#5)(#6)(#7)(#8)}{\committee@ix(#1)[#2](#3)(#4)(#5)(#6)(#7)(#8)[Isaac Newton (chair of dept.)]}%]
 }
 \def\committee@ix(#1)[#2](#3)(#4)(#5)(#6)(#7)(#8)[#9]{%
-
-  \def\supervisor{#1}
-
-    \def\committeemembers{\hspace{1.6in}
-%    \centerline{\parbox[t]{0.2\textwidth}{\setstretch{1} Major Professor:\\Committee:}
+  \def\committeemembers{%
+    \hspace{1.6in}
     \parbox[t][6.5cm][t]{\textwidth}{%
-    \centerline{\parbox[t]{0.2\textwidth}{\raggedleft \setstretch{2} Committee Chair:\\\vspace{2.5em}Committee:}
-%      \hspace{1cm}\parbox[t]{0.3\textwidth}{\setstretch{1}
-      \hspace{0.001cm} \parbox[t]{0.3\textwidth}{\raggedleft \setstretch{2}        { #1}\\ [\extraSpace]\ifthenelse{\equal{#2}{}}{}{{ #2}\\}{ #3}\\{#4}\\{ #5}\\{ #6}
-        \ifthenelse{\equal{#7}{}}{}{\\{#7}}\ifthenelse{\equal{ #8}{}}{}{\\{#8}}}}\vspace{1cm}}}
-
-
-  \def\trick{%
-    \ifthenelse{\equal{#2}{}}{\setlength{\addedspace}{1.3cm}}
-    {\setlength{\addedspace}{1.cm}}
-    \ifthenelse{\equal{#7}{}}{}{\addtolength{\addedspace}{-0.38cm}}
-    \ifthenelse{\equal{#8}{}}{}{\addtolength{\addedspace}{-0.38cm}}}
-
-  % \def\signaturelines{%
-  %   \begin{center}
-  %     \signline\\
-  %     {Dr. #1}, Chair\\[0.4cm]
-  %     \signline\\
-  %     \ifthenelse{\equal{#2}{}}{}{{Dr. #2}, Chair\\[0.4cm]\signline\\}
-  %     {Dr. #3}, Member\\[0.4cm]
-  %     \signline\\
-  %     {Dr. #4}, Member\\[0.4cm]
-  %     \signline\\
-  %     {Dr. #5}, Member\\[0.4cm]
-  %     \signline\\
-  %     {Dr. #6}, Member\\[0.4cm]
-  %     \signline\\
-  %     \ifthenelse{\equal{#7}{}}{}{{Dr. #7}, Member\\[0.4cm]\signline\\}
-  %     \ifthenelse{\equal{#8}{}}{}{{Dr. #8}, Member\\[0.4cm]\signline\\}
-  %     Date\\[0.4cm]
-  %     \signline\\
-  %     {Dr. #9}, \departmenttitlename\\
-  %     \departmentname
-  %   \end{center}}
+      \centerline{%
+        \parbox[t]{0.2\textwidth}{%
+          \raggedleft\setstretch{2} Committee Chair:\\[2.5em]
+          Committee:
+        }
+        \hspace{0.001cm}
+        \parbox[t]{0.3\textwidth}{%
+          \raggedleft\setstretch{2}{#1}\\[2.5em]
+          \ifthenelse{\equal{#2}{}}{}{{#2}\\}
+          {#3}\\{#4}\\{#5}\\{#6}
+          \ifthenelse{\equal{#7}{}}{}{\\{#7}}
+          \ifthenelse{\equal{ #8}{}}{}{\\{#8}}
+        }
+      }
+      \vspace{1cm}
     }
+  }
+  \def\trick{%
+    \ifthenelse{\equal{#2}{}}{\setlength{\addedspace}{1.3cm}}{\setlength{\addedspace}{1.cm}}
+    \ifthenelse{\equal{#7}{}}{}{\addtolength{\addedspace}{-0.38cm}}
+    \ifthenelse{\equal{#8}{}}{}{\addtolength{\addedspace}{-0.38cm}}
+  }
+}
 
-%%%%%%%%%%% Definitions of front matter%%%%%%%%%%%%%%%%%%
-
-\def\certifywords{
-  \ifthenelse{\equal{\onlinesubmission}{yes}}
-  {\centerline{A Dissertation Submitted in Partial Fulfillment of
-    the Requirements for the Degree of}}
-  {\centerline{A Dissertation Submitted in Partial Fulfillment of
-    the Requirements for the Degree of}}
-  \centerline{Doctor of Philosophy}
-  \centerline{in the College of Arts and Sciences}
-  \centerline{Georgia State University}}
-
-\def\certifyword{
-  \centerline{A Dissertation Submitted in Partial Fulfillment of
-    the Requirements for the Degree of}
-  \centerline{Doctor of Philosophy}
-  \centerline{in the College of Arts and Sciences}
-  \centerline{Georgia State University}}
-
-% \def\approval{\\\parbox[t]{\textwidth}{\setstretch{1}
-\def\approval{\\\parbox[b]{\textwidth}{\setstretch{2}
+\def\approval{%
+  \\
+  \parbox[b]{\textwidth}{%
+    \setstretch{2}
     Electronic Version Approved:\\\\\\
     Office of Graduate Services\\
     College of Arts and Sciences\\
     Georgia State University\\
-    \graduate\ \graduation}}
+    \graduate\ \graduation
+  }
+}
 
-% %------------------------Committee Certification Page---------------------
-% \ifthenelse{\equal{\printcertifypage}{yes}}{
-%   \def\certifypage{\pagenumbering{gobble}
-%     \enlargethispage{2cm}
-%     \trick
-%     \begin{center}
-%       \begin{minipage}[]{\textwidth}
-%         \begin{center}
-%           \parbox[]{\textwidth}{\setstretch{1.1}\centering\titlefontsize\titlediss\vspace*{\addedspace}}
-%           \parbox[]{\textwidth}{\setstretch{1}\certifyword\vspace*{\addedspace}}
-%           \parbox[]{\textwidth}{\setstretch{1.2}\centering\graduation\\by\\{\writer}\\committee:\vspace*{\addedspace}}
-%           % \parbox[]{\textwidth}{\setstretch{1}\signaturelines}
-%         \end{center}
-%       \end{minipage}
-%     \end{center}
-% %    \cleardoublepage
-% }{}}
+%%%%%%%%%%% Definitions of front matter%%%%%%%%%%%%%%%%%%
+
+% \def\certifywords{
+%   \ifthenelse{\equal{\onlinesubmission}{yes}}
+%   {\centerline{A Dissertation Submitted in Partial Fulfillment of
+%     the Requirements for the Degree of}}
+%   {\centerline{A Dissertation Submitted in Partial Fulfillment of
+%     the Requirements for the Degree of}}
+%   \centerline{Doctor of Philosophy}
+%   \centerline{in the College of Arts and Sciences}
+%   \centerline{Georgia State University}}
+
+% \def\certifyword{
+%   \centerline{A Dissertation Submitted in Partial Fulfillment of
+%     the Requirements for the Degree of}
+%   \centerline{Doctor of Philosophy}
+%   \centerline{in the College of Arts and Sciences}
+%   \centerline{Georgia State University}}
 
 % %------------------------Abstract Head------------------------------------
 % \renewenvironment{abstract}{
@@ -646,20 +595,20 @@
 % }
 
 %------------------------Title Page---------------------------------------
-\def\titlepage{\pagenumbering{gobble}
-  \begin{center}
-    \parbox[]{\textwidth}{\setstretch{2}\centering\titlefontsize\titlediss}
-  \end{center}
-  \vspace*{1.5in}
-  \centerline{by}
-  \vspace*{1.5in}
-  \centerline{\writer}
-  \vspace*{2.0in}
-  \certifywords
-%  \vspace*{1.5in}
-  \centerline{\graduation}
-%  \cleardoublepage
-}
+% \def\titlepage{\pagenumbering{gobble}
+%   \begin{center}
+%     \parbox[]{\textwidth}{\setstretch{2}\centering\titlefontsize\titlediss}
+%   \end{center}
+%   \vspace*{1.5in}
+%   \centerline{by}
+%   \vspace*{1.5in}
+%   \centerline{\writer}
+%   \vspace*{2.0in}
+%   \certifywords
+% %  \vspace*{1.5in}
+%   \centerline{\graduation}
+% %  \cleardoublepage
+% }
 
 % %------------------------Copyright Page-----------------------------------
 % \def\copyrightpage{\pagenumbering{gobble}
