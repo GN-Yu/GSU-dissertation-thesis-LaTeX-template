@@ -496,10 +496,10 @@
   \@ifnextchar({\committee@iv(#1)[#2](#3)}{\committee@iv(#1)[#2](#3)(Neils Bohr)}%)
 }
 \def\committee@iv(#1)[#2](#3)(#4){%
-  \@ifnextchar({\committee@v(#1)[#2](#3)(#4)}{\committee@v(#1)[#2](#3)(#4)(Alvin Das)}%)
+  \@ifnextchar({\committee@v(#1)[#2](#3)(#4)}{\committee@v(#1)[#2](#3)(#4)()}%)
 }
 \def\committee@v(#1)[#2](#3)(#4)(#5){%
-  \@ifnextchar({\committee@vi(#1)[#2](#3)(#4)(#5)}{\committee@vi(#1)[#2](#3)(#4)(#5)(Albert Einstein)}%)
+  \@ifnextchar({\committee@vi(#1)[#2](#3)(#4)(#5)}{\committee@vi(#1)[#2](#3)(#4)(#5)()}%)
 }
 \def\committee@vi(#1)[#2](#3)(#4)(#5)(#6){%
   \@ifnextchar({\committee@vii(#1)[#2](#3)(#4)(#5)(#6)}{\committee@vii(#1)[#2](#3)(#4)(#5)(#6)()}%)
@@ -508,9 +508,6 @@
   \@ifnextchar({\committee@viii(#1)[#2](#3)(#4)(#5)(#6)(#7)}{\committee@viii(#1)[#2](#3)(#4)(#5)(#6)(#7)()}%)
 }
 \def\committee@viii(#1)[#2](#3)(#4)(#5)(#6)(#7)(#8){%
-  \@ifnextchar[{\committee@ix(#1)[#2](#3)(#4)(#5)(#6)(#7)(#8)}{\committee@ix(#1)[#2](#3)(#4)(#5)(#6)(#7)(#8)[Isaac Newton (chair of dept.)]}%]
-}
-\def\committee@ix(#1)[#2](#3)(#4)(#5)(#6)(#7)(#8)[#9]{%
   \def\committeemembers{%
     \hspace{1.6in}
     \parbox[t][6.5cm][t]{\textwidth}{%
@@ -521,11 +518,16 @@
         }
         \hspace{0.001cm}
         \parbox[t]{0.3\textwidth}{%
-          \raggedleft\setstretch{2}{#1}\\[2.5em]
+          \raggedleft
+          \setstretch{2}{#1}\\[2.5em]
           \ifthenelse{\equal{#2}{}}{}{{#2}\\}
-          {#3}\\{#4}\\{#5}\\{#6}
+          {#3}
+          \ifthenelse{\equal{#4}{}}{}{\\{#4}}
+          \ifthenelse{\equal{#5}{}}{}{\\{#5}}
+          \ifthenelse{\equal{#6}{}}{}{\\{#6}}
           \ifthenelse{\equal{#7}{}}{}{\\{#7}}
-          \ifthenelse{\equal{ #8}{}}{}{\\{#8}}
+          \ifthenelse{\equal{#8}{}}{}{\\{#8}}
+          % \ifthenelse{\equal{ #9}{}}{}{\\{#9}}
         }
       }
       \vspace{1cm}
