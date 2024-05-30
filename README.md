@@ -14,5 +14,5 @@ Goal:
 4. make "the problems I had" not "the problems you will have"
 
 A tip:
-* If there is an error message about the bibliography and you can not identify the problem, try deleting `.bbl` file and recompile.
+* If there is an error message about the bibliography and you can not identify the problem, try deleting `.bbl` file and recompile. (It could be always useful to delete all auxiliary files and recompile when you have an error that doesn't go away.)
 

@@ -27,7 +27,6 @@
 % The packages below are required for the normal running of this style
 % file and should not be deleted or commented out, unless you know
 % exactly what you are doing.
-\PassOptionsToClass{openany}{report}
 \NeedsTeXFormat{LaTeX2e}[2005/07/01]
 \ProvidesClass{gsudiss}[2006/07/01]
 \typeout{}
@@ -52,9 +51,7 @@
 \RequirePackage{ifthen}
 \let\lspace\gsuspacing
 \def\abbrevskip{2.000}
-% \def\printcertifypage{no}
 \def\draftmode{no}
-% \def\certifypage{}
 \def\print@draft{}
 \def\fontify{}
 \def\geo{no}
@@ -83,8 +80,6 @@
   \def\fontify{ptm}}
 \DeclareOption{charter}{%
   \def\fontify{bch}}
-% \DeclareOption{certify}{%
-%   \def\printcertifypage{no}}
 \DeclareOption{drafts}{%
   \def\draftmode{yes}}
 \DeclareOption{pagenumtop}{%
@@ -114,10 +109,7 @@
   \ifthenelse{\equal{\onlinesubmission}{yes}}
   {\def\geo{yes}\PassOptionsToClass{openany}{report}}{}
 }
-%%%%%%%%%%%%%%%%%%%
 \PassOptionsToClass{openany}{report}
-\PassOptionsToClass{hidelinks}{report}
-%%%%%%%%%%%%%%%%%%
 \ProcessOptions
 \LoadClass{report}
 
@@ -526,8 +518,7 @@
           \ifthenelse{\equal{#5}{}}{}{\\{#5}}
           \ifthenelse{\equal{#6}{}}{}{\\{#6}}
           \ifthenelse{\equal{#7}{}}{}{\\{#7}}
-          \ifthenelse{\equal{#8}{}}{}{\\{#8}}
-          % \ifthenelse{\equal{ #9}{}}{}{\\{#9}}
+          \ifthenelse{\equal{ #8}{}}{}{\\{#8}}
         }
       }
       \vspace{1cm}

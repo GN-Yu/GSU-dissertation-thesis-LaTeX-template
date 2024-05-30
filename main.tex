@@ -24,21 +24,18 @@
     pdfborder={0 0 0},
 }
 
-% Here is how you set the fonts for each section of the TOC
-\usepackage{tocloft}
+% You can set the fonts for each section of the TOC using options in the tocloft package
 \renewcommand{\cftfigfont}{Figure\ }
 \renewcommand{\cfttabfont}{Table\ }
 \renewcommand{\cftchapfont}{\bfseries}  % Set the font for the chapters in TOC
 \renewcommand{\cftsecfont}{\normalfont} % Set the font for the sections in TOC, e.g., you can change it to \renewcommand{\cftsecfont}{\bfseries}
-\renewcommand{\cftsubsecfont}{\normalfont}  % Set the font for the subsections in TOC, e.g., you can change it to \renewcommand{\cftsubsecfont}{\bfseries\itshape}{\bfseries}
+\renewcommand{\cftsubsecfont}{\itshape}  % Set the font for the subsections in TOC, e.g., you can change it to \renewcommand{\normalfont}
 \renewcommand{\cftsubsubsecfont}{\itshape}  % Set the font for the subsubsections in TOC
 \renewcommand{\cftparafont}{\mdseries}  % Set the font for the paragraphs in TOC
-
 \setcounter{tocdepth}{2}      % The depth of table of contents, the setting of 2 means it only goes to subsections, you can change it (e.g. 3 is to include subsubsections).
 
 
 \usepackage{lscape}
-\usepackage{geometry}
 \usepackage{array}
 \usepackage{deluxetable}
 \usepackage{longtable,ltcaption}
