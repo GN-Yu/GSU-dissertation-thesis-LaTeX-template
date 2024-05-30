@@ -5,11 +5,14 @@ Started May 9, 2024 from a bit newer version than that on above website from dis
 
 A good way to use this repo may not be forking it, because you don't want your dissertation/thesis to be public in the when you are writing it. Please download it as a `.zip` file to use it locally, and maybe upload to your own private git repo for better version control. But if you want to help make this template better, please feel free to fork, raise issues, or submit a PR.
 
-Right now, I found many places that can be improved and changed. But my defense is coming up soon. I may not have enough time to refine this template.
+Right now, I found many places that can be improved and changed. But I may not have enough time to refine it to perfect. So you are very welcome to collaborate with me if you want when you are writing your thesis or dissertation.
 
 Goal:
 1. Minimal, as simple as possible
 2. easy to maintain and update
 3. annotated clearly
 4. make "the problems I had" not "the problems you will have"
+
+A tip:
+* If there is an error message about the bibliography and you can not identify the problem, try deleting `.bib` file and recompile.
 

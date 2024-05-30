@@ -6,7 +6,7 @@ Some tasks:
 5. figures and tables format
 6. check if he `\hspace*{1cm}` in front of both dedication and acknowledgement is the same as the document indent
 7. An example of the two or more lines title
-8. Investigate `\extraSpace` in `.cls` file
+8. Improper page number position for print version - both "online" and not "online" page layout needs adjusting
 9. what a mess at committee member part!!!!!
 
 Some thoughts:
@@ -22,5 +22,6 @@ Examples and instructions include:
 At release:
 1. Change the typeout at release
 2. Change the beginning of the main.tex
-3. Release both in `.zip` and as overleaf template
+3. Hide or remove `legacy` folder
+4. Release both in `.zip` and as overleaf template
 
