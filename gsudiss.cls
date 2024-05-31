@@ -307,7 +307,7 @@
 \newpagestyle{main}[]{
   \sethead[][][]{\print@draft}{}{\thepage}}
 \pagestyle{main}
-\renewpagestyle{plain}[]{
+\renewpagestyle{plain}[]{%
   \ifthenelse{\equal{\chapterpage@number}{top}}
   {\setfoot[][][]{}{}{}\sethead[][][]{\print@draft}{}{\thepage}}{}
   \ifthenelse{\equal{\chapterpage@number}{bottom}}
@@ -475,59 +475,66 @@
 %        Process information for Committee Certification page        %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\def\committeeChair{%
+  \@ifnextchar({\committeeChair@i}{\errmessage{The committee chair's name is required}}%)
+}
+\def\committeeChair@i(#1){%
+  \if\relax\detokenize{#1}\relax
+    \errmessage{The committee chair's name is required}%
+  \else
+    \def\chair{#1}%
+  \fi
+}
+
+% To have more than one committee co-chair, change the definition of \committeeCoChair like the one for \committee
+\def\committeeCoChair{%
+  \@ifnextchar({\committeeCoChair@i}{\def\cochair{}}%)
+}
+\def\committeeCoChair@i(#1){%
+  \if\relax\detokenize{#1}\relax
+    \def\cochair{}%
+  \else
+    \def\cochair{#1}%
+  \fi
+}
+
+\newcounter{committeecount}
+\newcommand{\committeelist}{}
+
 \def\committee{%
-  \@ifnextchar({\committee@i}{\committee@i(Albert Einstein [supervisor])}%)
+  \@ifnextchar({\committee@i}{\errmessage{At least one committee member is required}}%)
 }
 \def\committee@i(#1){%
-  \@ifnextchar[{\committee@ii(#1)}{\committee@ii(#1)[]}%]
+  \@ifnextchar({\committee@ii(#1)}{%
+    \addtocounter{committeecount}{1}%
+    \g@addto@macro\committeelist{#1\\}%
+  }%)
 }
-\def\committee@ii(#1)[#2]{%
-  \@ifnextchar({\committee@iii(#1)[#2]}{\committee@iii(#1)[#2](Marie Curie)}%)
+\def\committee@ii(#1)(#2){%
+  \addtocounter{committeecount}{1}%
+  \g@addto@macro\committeelist{#1\\}%
+  \addtocounter{committeecount}{1}%
+  \g@addto@macro\committeelist{#2\\}%
+  \@ifnextchar({\committee@i}{}%
 }
-\def\committee@iii(#1)[#2](#3){%
-  \@ifnextchar({\committee@iv(#1)[#2](#3)}{\committee@iv(#1)[#2](#3)(Neils Bohr)}%)
-}
-\def\committee@iv(#1)[#2](#3)(#4){%
-  \@ifnextchar({\committee@v(#1)[#2](#3)(#4)}{\committee@v(#1)[#2](#3)(#4)()}%)
-}
-\def\committee@v(#1)[#2](#3)(#4)(#5){%
-  \@ifnextchar({\committee@vi(#1)[#2](#3)(#4)(#5)}{\committee@vi(#1)[#2](#3)(#4)(#5)()}%)
-}
-\def\committee@vi(#1)[#2](#3)(#4)(#5)(#6){%
-  \@ifnextchar({\committee@vii(#1)[#2](#3)(#4)(#5)(#6)}{\committee@vii(#1)[#2](#3)(#4)(#5)(#6)()}%)
-}
-\def\committee@vii(#1)[#2](#3)(#4)(#5)(#6)(#7){%
-  \@ifnextchar({\committee@viii(#1)[#2](#3)(#4)(#5)(#6)(#7)}{\committee@viii(#1)[#2](#3)(#4)(#5)(#6)(#7)()}%)
-}
-\def\committee@viii(#1)[#2](#3)(#4)(#5)(#6)(#7)(#8){%
-  \def\committeemembers{%
-    \hspace{1.6in}
-    \parbox[t][6.5cm][t]{\textwidth}{%
-      \centerline{%
-        \parbox[t]{0.2\textwidth}{%
-          \raggedleft\setstretch{2} Committee Chair:\\[2.5em]
-          Committee:
-        }
-        \hspace{0.001cm}
-        \parbox[t]{0.3\textwidth}{%
-          \raggedleft
-          \setstretch{2}{#1}\\[2.5em]
-          \ifthenelse{\equal{#2}{}}{}{{#2}\\}
-          {#3}
-          \ifthenelse{\equal{#4}{}}{}{\\{#4}}
-          \ifthenelse{\equal{#5}{}}{}{\\{#5}}
-          \ifthenelse{\equal{#6}{}}{}{\\{#6}}
-          \ifthenelse{\equal{#7}{}}{}{\\{#7}}
-          \ifthenelse{\equal{ #8}{}}{}{\\{#8}}
-        }
+
+\newcommand{\committeemembers}{
+  \hspace{1.6in}
+  \parbox[t][6.5cm][t]{\textwidth}{%
+    \centerline{%
+      \parbox[t]{0.3\textwidth}{%
+        \raggedleft\setstretch{2} Committee Chair:
+        \ifthenelse{\equal{\cochair}{}}{\\[2.5em]}{\\{Committee Co-Chair:}}
+        Committee:
       }
-      \vspace{1cm}
+      \hspace{0.001cm}
+      \parbox[t]{0.3\textwidth}{%
+        \raggedleft
+        \setstretch{2}{\chair}
+        \ifthenelse{\equal{\cochair}{}}{\\[2.5em]}{\\{\cochair}\\}
+        {\committeelist}
+      }
     }
-  }
-  \def\trick{%
-    \ifthenelse{\equal{#2}{}}{\setlength{\addedspace}{1.3cm}}{\setlength{\addedspace}{1.cm}}
-    \ifthenelse{\equal{#7}{}}{}{\addtolength{\addedspace}{-0.38cm}}
-    \ifthenelse{\equal{#8}{}}{}{\addtolength{\addedspace}{-0.38cm}}
   }
 }
 
@@ -580,10 +587,10 @@
 %   \centerline{Under the Direction of \supervisor, PhD}
 %   \vspace{1.0in}
 %   \begin{abstract}
-%     \input{Frontmatter/abstract}
+%     \input{FrontMatters/abstract}
 %   \end{abstract}\\[0.5in]
 %   \noindent \parbox[t]{0.25\textwidth}{\setstretch{1} INDEX WORDS:} \hspace{3pt}
-%   \parbox[t]{0.75\textwidth}{\setstretch{1}\input{Frontmatter/index-words}}
+%   \parbox[t]{0.75\textwidth}{\setstretch{1}\input{FrontMatters/index-words}}
 %  % \cleardoublepage
 % }
 
@@ -603,15 +610,19 @@
 % %  \cleardoublepage
 % }
 
-% %------------------------Copyright Page-----------------------------------
-% \def\copyrightpage{\pagenumbering{gobble}
-%   \vspace*{0.7\textheight}
-%   \begin{center}
-%     \parbox[]{\textwidth}{\setstretch{1}
-%       \begin{center}Copyright by\\Your Name\\\graduation\end{center}}
-%   \end{center}
-% %  \cleardoublepage
-% }
+%------------------------Copyright Page-----------------------------------
+\def\copyrightpage{%
+  \pagenumbering{gobble}
+  \vfill
+  \begin{center}
+    \setstretch{0.9}
+    \vspace*{\fill}
+    Copyright by\\
+    \writer\\
+    \graduation
+  \end{center}
+  \cleardoublepage
+}
 
 %------------------------Approval Page------------------------------------
 \def\approvalpage{\pagenumbering{gobble}
@@ -625,31 +636,29 @@
   \vspace*{1in}
   \committeemembers
   \approval
-%  \cleardoublepage
+  \cleardoublepage
 }
 
 %------------------------Dedication Page----------------------------------
-
 \def\dedicationpage{%
-  \if@twoside
-    \pagenumbering{roman}\setcounter{page}{5}
-  \else
-    \pagenumbering{roman}\setcounter{page}{4}
-  \fi
-  \IfFileExists{Frontmatter/dedication.tex}
-  {\chapter*{DEDICATION}\input{Frontmatter/dedication}}{\typeout{The file
-      "dedication.tex" could not be found; I will continue without
-      it.}}}
+  \IfFileExists{FrontMatters/dedication.tex}{%
+    \if@twoside
+      \pagenumbering{roman}\setcounter{page}{5}
+    \else
+      \pagenumbering{roman}\setcounter{page}{4}
+    \fi
+    \chapter*{DEDICATION}\input{FrontMatters/dedication}
+  }{\typeout{The file "dedication.tex" could not be found in "FrontMatters" folder; I will continue without it.}}
+}
 
 %------------------------Acknowledgments----------------------------------
-
 \def\acknowledgmentpage{%
-  \IfFileExists{Frontmatter/acknowledgments.tex}
-  {\chapter*{ACKNOWLEDGMENTS}
+  \IfFileExists{FrontMatters/acknowledgments.tex}{%
+    \chapter*{ACKNOWLEDGMENTS}
     \addcontentsline{toc}{chapter}{ACKNOWLEDGMENTS}
-    \input{Frontmatter/acknowledgments}}
-  {\typeout{The file "acknowledgments.tex" could not be found; I will continue
-      without it.}}}
+    \input{FrontMatters/acknowledgments}
+  }{\typeout{The file "acknowledgments.tex" could not be found in "FrontMatters" folder; I will continue without it.}}
+}
 
 %------------------------Table of Contents--------------------------------
 \renewcommand\tableofcontents{%
@@ -705,15 +714,15 @@
 \newcommand{\sepabbrev}[1]{}
 \newcommand{\setloaname}[1]{%
   \def\loaname{#1}}
-\IfFileExists{abbreviations.tex}
+\IfFileExists{FrontMatters/abbreviations.tex}
 {\RequirePackage{acronym}
   \renewcommand{\listofabbreviations}{%
     \chapter*{\loaname}
     \addcontentsline{toc}{chapter}{\loaname}
     \begin{acronym}
-      \input{abbreviations}
+      \input{FrontMatters/abbreviations}
     \end{acronym}}}
-{\typeout{The file "abbreviations.tex" could not be found; I will continue
+{\typeout{The file "abbreviations.tex" could not be found in "FrontMatters" folder; I will continue
     without it.}}
 
 \ifthenelse{\equal{\onlinesubmission}{no}}

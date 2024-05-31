@@ -97,21 +97,14 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \committee: The first parenthesis must contain your supervisor name.
-%         You can have two supervisors, in which case, the
-%         second supervisor goes into the square brackets, next to the
-%         first. If you have one like me, then leave the second entry blank, like below. The
-%         rest of the parentheses contains the rest of your committee members. You
-%         can have up to six entries, NOT including your supervisor(s). My
-%         school requires five or four. I have five (5) members
-%         below. Note that there is no need to put the "Dr." title in front of any of the names.
-% Adjust margins to 1.0in on all sides
+% This is where you include the information of your committee members.
+% I have five members as an example below. Only the first and last name of your committee members should be listed here. Please do not include their titles. In other words, do not list “Dr.” or “Ph.D.” here. 
 
-\committee(FirstName LastName)[] % Committee CHAIR's First Name Last Name.Only the first and last name of your committee chair should be listed here. Please do not include their titles. In other words, do not list “Dr.” or “Ph.D.” here.
-          (FirstName LastName) % Committee MEMBER's First Name Last Name. Only the first and last name of your committee members should be listed here. Please do not include their titles. In other words, do not list “Dr.” or “Ph.D.” here
-          (FirstName LastName)
-          (FirstName LastName)
-          (FirstName LastName)%
+\committeeChair(FirstName LastName1) % Committee CHAIR's First Name Last Name. This has to be non-empty to compile correctly.
+
+\committeeCoChair() % Committee CO-CHAIR's First Name Last Name. This is useful if you have two advisors. If you do not have a co-chair, you can leave this field empty.
+
+\committee(FirstName LastName2)(FirstName LastName3)(FirstName LastName4)(FirstName LastName5) % Other Committee Members. There has to be at least one to compile correctly. Just add more parentheses for more committee members.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %               The dissertation starts here.                        %
@@ -128,9 +121,12 @@
 
 \begin{document}
 
-%%%%%%%%%%%%%% The title, abstract and front matters %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% The front matters %%%%%%%%%%%%%%%
 
-\include{TitleAbstract}            % See the TitleAbstract.tex file
+% Tile and abstract pages (required)
+\include{./FrontMatters/TitleAbstract} % See the TitleAbstract.tex file
+
+% Copyright page (required), approval page (required), dedication (optional), acknowledgments (optional), table of contents (required), list of tables(required and generated automatically if tables used), list of figures (required and generated automatically if figures used), list of abbreviations (optional), Preface (optional) 
 \include{frontmatter}              % See the frontmatter.tex file
 
 %%%%%%%%%%%%%%%%%%%% The main chapters %%%%%%%%%%%%%%%%%%%%%
@@ -148,8 +144,8 @@
 
 \appendix
 
-\include{./Chapters/Appendix} % Use this file if you have only one appendix.
-% \include{./Chapters/Appendices} % Use this file if you have more than one appendices.
+\include{./BackMatters/Appendix} % Use this file if you have only one appendix.
+% \include{./BackMatters/Appendices} % Use this file if you have more than one appendices.
 
 
 % The bibliography starts here.

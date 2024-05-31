@@ -1,53 +1,37 @@
 %%%%%%%%%%%%%%%%%%%% The front matter of your document %%%%%%%%%%%%%%%%%%%%
 
 \frontmatter
+% Copyright page (required), approval page (required), dedication (optional), acknowledgments (optional), table of contents (required), list of tables(required and generated automatically if tables used), list of figures (required and generated automatically if figures used), list of abbreviations (optional), Preface (optional) 
 
-% \certifypage                 % Produces the certify page, if this option is
-%                              % set in the class file.
+% The title page is required. But you don't need to change anything here. To edit your name and year, please go to file `main.tex'
+\copyrightpage
 
+% The approval page is required. But you don't need to change anything here. To edit the committee and other information, please go to file `main.tex'
+\approvalpage
 
-
-%\copyrightpage               % Produces the copyright page.
-
-%%%%%%%%%%%%%%
-%Below is the copy right page
-%%%%%%%%%%%%%%
-
-\thispagestyle{empty}
-\vfill
-\begin{center}
-\setstretch{0.9}
-\vspace*{\fill}
-Copyright by\\
-Full Legal Name\\ %Your name must be in title caps here.
-Year\\ %The current Year
-\end{center}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\clearpage
-\approvalpage                % To edit the Committee, First Name & Last Name, please go to file main.tex
-\clearpage
-\dedicationpage              % The dedication page is optional.
-\clearpage                             % This command does nothing if you don't
+% The dedication page is optional. You can write your dedication in `./FrontMatters/dedication.tex' file. Delete that file if you don't want to include it.
+\dedicationpage              % This command does nothing if you don't
                              % have a `dedication.tex' file, otherwise
                              % the file is included in the frontmatter.
 
-\acknowledgmentpage          % The acknowledge page is optional.
-\clearpage                             % This command does nothing if you don't
+
+% The acknowledgment page is optional. You can write your acknowledgment in `./FrontMatters/acknowledgment.tex' file. Delete that file if you don't want to include it.
+\acknowledgmentpage          % This command does nothing if you don't
                              % have an `acknowledgment.tex' file, otherwise
                              % the file is included in the frontmatter.
 
 \tableofcontents             % Table of Contents will be automatically
-\clearpage                             % generated and placed here.
+\clearpage                   % generated and placed here.
 
 \listoftables                % List of Tables will be automatically
-\clearpage                             % generated if you had made proper table captions.
+\clearpage                   % generated if you had made proper table captions.
 
 \listoffigures               % List of Figures will be automatically
-\clearpage                             % generated if you had made proper figure captions.
+\clearpage                   % generated if you had made proper figure captions.
 
+% The list of abbreviations is optional. You can write your list of abbreviations in `./FrontMatters/abbreviations.tex' file. Delete that file if you don't want to include it.
 \listofabbreviations         % List of Abbreviations will be
-\clearpage                             % automatically generated if you had made any,
+\clearpage                   % automatically generated if you had made any,
                              % following the style of the "Acronym"
                              % package. See my "abbreviation.tex" file
                              % for example usage. If you don't have

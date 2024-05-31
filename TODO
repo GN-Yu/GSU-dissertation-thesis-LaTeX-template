@@ -1,20 +1,21 @@
 Some tasks:
 1. Move `.sty` file to a folder? Or better just make every package being included as up-to-date ones
-2. Separate the style of doctoral dissertation and master's thesis
-3. Organize front matter in the file tree
+2. Separate the style of doctoral dissertation and master's thesis?
+3. Organize front matter in the file tree, Put `TitleAbstract.tex` in Frontmatter folder
 4. Investigate `\mathbb` font, and if `\itshape`is the itshape of the normal font.
 5. figures and tables format
 6. check if he `\hspace*{1cm}` in front of both dedication and acknowledgement is the same as the document indent
-7. Put `frontmatter.tex` and `TitleAbstract.tex` in Frontmatter folder
+7. Although it is mentioned in the guidebook that a preface is optional as the last thing in the front matter, there is no example so I did not write it in the template yet
 8. Improper page number position for print version - both "online" and not "online" page layout needs adjusting
-9. what a mess at committee member part!!!!!
-10. Separate "what you can customize", "what is recommended", and "what is required" in `main.tex`
-11. Investigate the `drafts` option of the document
-12. sort and annotate `FormatCustomizeOptions.tex`
+9. Ask the formatting team -- if the abstract takes two pages, should the dedication page be still numbered as "iv"? (In the template, it is hard-set in `.cls` file.)
+10. Investigate the `drafts` option of the document
+11. sort and annotate `FormatCustomizeOptions.tex`
 
 Some thoughts:
 1. The whole document can be a user manual. Instructions and examples can be written in the chapters.
 2. Deleting `.bib` file most of the times solves the problem of bibliography. Not sure why there is problem
+3. Separate "what you can customize", "what is recommended", and "what is required" in `main.tex`
+4. Make a beautiful, customizable version for printings
 
 Examples and instructions include:
 1. reference to chapters and sections, recommend, \chap\ref{chap:label}
