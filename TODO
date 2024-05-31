@@ -1,7 +1,7 @@
 Some tasks:
 1. Move `.sty` file to a folder? Or better just make every package being included as up-to-date ones
 2. Separate the style of doctoral dissertation and master's thesis?
-3. Organize front matter in the file tree, Put `TitleAbstract.tex` in Frontmatter folder
+3. 
 4. Investigate `\mathbb` font, and if `\itshape`is the itshape of the normal font.
 5. figures and tables format
 6. check if he `\hspace*{1cm}` in front of both dedication and acknowledgement is the same as the document indent

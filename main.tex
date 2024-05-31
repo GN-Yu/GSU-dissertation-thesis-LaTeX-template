@@ -70,35 +70,20 @@
 \BeforeEnd{equation*}{\addtolength{\belowdisplayskip}{-0.5\baselineskip}}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           Fill out some dissertation info first.                   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% This is where you include the information of your thesis/dissertation
-
-\author(FirstName LastName)              % Name required.
+\author(FirstName LastName) % Your name.
 
 \graduationyear(Year)
-
 \graduationmonth(Month) % The Month and Year here must be the month and year of your graduation—not the month and year of your submission or upload.
 
-\title(Manuscript Title)    % Title of dissertation Required.
-
-\titlesize(12)(12)                           % This is for changing
-                                             % the default font size
-                                             % for your title (for just
-                                             % the first page?). The
-                                             % first argument is the
-                                             % font size, the second
-                                             % is the line spacing for
-                                             % long tiles that wrap to
-                                             % more than one line.
-                                             % Default is equivalent
-                                             % to the \LARGE command,
-                                             % which is roughly (22)(22).
-
+\title(Manuscript Title) % The title of your dissertation/thesis.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% This is where you include the information of your committee members.
-% I have five members as an example below. Only the first and last name of your committee members should be listed here. Please do not include their titles. In other words, do not list “Dr.” or “Ph.D.” here. 
+% Information of your committee members. I have five members as an example below.
+% Only the first and last name of your committee members should be listed here. Please do not include their titles. In other words, do not list “Dr.” or “Ph.D.” here. 
 
 \committeeChair(FirstName LastName1) % Committee CHAIR's First Name Last Name. This has to be non-empty to compile correctly.
 
@@ -106,9 +91,7 @@
 
 \committee(FirstName LastName2)(FirstName LastName3)(FirstName LastName4)(FirstName LastName5) % Other Committee Members. There has to be at least one to compile correctly. Just add more parentheses for more committee members.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%               The dissertation starts here.                        %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \input{FormatCustomOptions}        % There are many places that's 
                                    % required by the guidelines so
                                    % you can customize. This file
@@ -119,15 +102,46 @@
                                    % commands in this file like
                                    % math abbreviations, etc.
 
+
 \begin{document}
 
-%%%%%%%%%%%%%% The front matters %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                 The document starts here.                          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Tile and abstract pages (required)
-\include{./FrontMatters/TitleAbstract} % See the TitleAbstract.tex file
+%%%%%%%%%%%%%%%%%%%% The front matter of your document %%%%%%%%%%%%%%%
+% The front matters include copyright page (required), approval page (required), dedication (optional), acknowledgments (optional), table of contents (required), list of tables(required and generated automatically if tables used), list of figures (required and generated automatically if figures used), list of abbreviations (optional), and preface (optional) 
 
-% Copyright page (required), approval page (required), dedication (optional), acknowledgments (optional), table of contents (required), list of tables(required and generated automatically if tables used), list of figures (required and generated automatically if figures used), list of abbreviations (optional), Preface (optional) 
-\include{frontmatter}              % See the frontmatter.tex file
+
+% Tile and abstract pages are required. To edit your title and abstract pages, go to `./FrontMatters/TitleAbstract.tex' file.
+\include{./FrontMatters/TitleAbstract}
+
+\frontmatter % This line is supposed to be here.
+
+% The title page is required. To edit your name and year, please go to \author()
+\copyrightpage
+
+% The approval page is required. To edit the committee and other information, please go to \committeeChair(), \committeeCoChair(), \committee(), etc.
+\approvalpage
+
+% The dedication page is optional. You can write your dedication in `./FrontMatters/dedication.tex' file. Delete that file if you don't want to include it. This command does nothing if you don't have a `dedication.tex' file.
+\dedicationpage
+
+% The acknowledgment page is optional. You can write your acknowledgment in `./FrontMatters/acknowledgment.tex' file. Delete that file if you don't want to include it. This command does nothing if you don't have an `acknowledgment.tex' file.
+\acknowledgmentpage
+
+% Table of Contents will be automatically generated and placed here.
+\tableofcontents
+
+% List of Tables will be automatically generated if you had made proper table captions.
+\listoftables
+
+% List of Figures will be automatically generated if you had made proper figure captions.
+\listoffigures
+
+% The list of abbreviations is optional. List of Abbreviations will be automatically generated if you had made any in `./FrontMatters/abbreviations.tex' file following the style of the "Acronym". See that file for example usage. Delete that file if you don't want to include it. This command does nothing if you don't have an `abbreviations.tex' file.
+\listofabbreviations
+
 
 %%%%%%%%%%%%%%%%%%%% The main chapters %%%%%%%%%%%%%%%%%%%%%
 
@@ -140,6 +154,7 @@
 \include{./Chapters/Chapter_2}
 \include{./Chapters/Chapter_3}
 
+
 %%%%%%%%%%%%%%%%%%%% The back matters %%%%%%%%%%%%%%%%%%%%%
 
 \appendix
@@ -150,7 +165,6 @@
 
 % The bibliography starts here.
 % Format the entries according to your department or discipline’s choice of style manual.
-
 \bibliographystyle{plain}           % Please learn to use the
                                     % formatting of Latex's Bibtex. It
                                     % will make your life easier.
@@ -158,7 +172,7 @@
                                     % reference examples.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%               The dissertation ends here.                          %
+%                  The document ends here.                           %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}

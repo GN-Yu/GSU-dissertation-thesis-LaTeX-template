@@ -647,7 +647,9 @@
     \else
       \pagenumbering{roman}\setcounter{page}{4}
     \fi
-    \chapter*{DEDICATION}\input{FrontMatters/dedication}
+    \chapter*{DEDICATION}
+    \input{FrontMatters/dedication}
+    \cleardoublepage
   }{\typeout{The file "dedication.tex" could not be found in "FrontMatters" folder; I will continue without it.}}
 }
 
@@ -657,6 +659,7 @@
     \chapter*{ACKNOWLEDGMENTS}
     \addcontentsline{toc}{chapter}{ACKNOWLEDGMENTS}
     \input{FrontMatters/acknowledgments}
+    \cleardoublepage
   }{\typeout{The file "acknowledgments.tex" could not be found in "FrontMatters" folder; I will continue without it.}}
 }
 
@@ -667,13 +670,18 @@
   \else
   \@restonecolfalse
   \fi
-  \chapter*{\contentsname
+  \chapter*{%
+    \contentsname
     \@mkboth{%
-      \MakeUppercase\contentsname}{\MakeUppercase\contentsname}}%
-  \begin{singlespacing}
+      \MakeUppercase\contentsname}{\MakeUppercase\contentsname
+    }%
+  }%
+  \begin{singlespacing}%
     \@starttoc{toc}%
   \end{singlespacing}
-  \if@restonecol\twocolumn\fi}
+  \if@restonecol\twocolumn\fi
+  \cleardoublepage
+}
 
 %------------------------List of Figures----------------------------------
 \renewcommand\listoffigures{%
@@ -689,7 +697,9 @@
   \begin{singlespacing}
     \@starttoc{lof}%
   \end{singlespacing}
-  \if@restonecol\twocolumn\fi}
+  \if@restonecol\twocolumn\fi
+  \cleardoublepage
+}
 
 %------------------------List of Tables-----------------------------------
 \renewcommand\listoftables{%
@@ -706,7 +716,9 @@
   \begin{singlespacing}
     \@starttoc{lot}%
   \end{singlespacing}
-  \if@restonecol\twocolumn\fi}
+  \if@restonecol\twocolumn\fi
+  \cleardoublepage
+}
 
 %------------------------List of Abbreviations----------------------------
 \def\loaname{LIST OF ABBREVIATIONS}
@@ -714,16 +726,17 @@
 \newcommand{\sepabbrev}[1]{}
 \newcommand{\setloaname}[1]{%
   \def\loaname{#1}}
-\IfFileExists{FrontMatters/abbreviations.tex}
-{\RequirePackage{acronym}
+\IfFileExists{FrontMatters/abbreviations.tex}{%
+  \RequirePackage{acronym}
   \renewcommand{\listofabbreviations}{%
     \chapter*{\loaname}
     \addcontentsline{toc}{chapter}{\loaname}
     \begin{acronym}
       \input{FrontMatters/abbreviations}
-    \end{acronym}}}
-{\typeout{The file "abbreviations.tex" could not be found in "FrontMatters" folder; I will continue
-    without it.}}
+    \end{acronym}
+    \cleardoublepage
+  }
+}{\typeout{The file "abbreviations.tex" could not be found in "FrontMatters" folder; I will continue without it.}}
 
 \ifthenelse{\equal{\onlinesubmission}{no}}
 {\ifthenelse{\equal{\fontify}{pbk}}
