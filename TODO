@@ -9,6 +9,8 @@ Some tasks:
 8. Improper page number position for print version - both "online" and not "online" page layout needs adjusting
 9. what a mess at committee member part!!!!!
 10. Separate "what you can customize", "what is recommended", and "what is required" in `main.tex`
+11. Investigate the `drafts` option of the document
+12. sort and annotate `FormatCustomizeOptions.tex`
 
 Some thoughts:
 1. The whole document can be a user manual. Instructions and examples can be written in the chapters.

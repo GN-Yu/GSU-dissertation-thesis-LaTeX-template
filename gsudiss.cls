@@ -753,5 +753,5 @@
 \ifthenelse{\equal{\onlinesubmission}{no}}
 {\ifthenelse{\equal{\fontify}{day}}
 {\renewcommand{\rmdefault}{dayrom}
-  \usepackage[T1]{fontenc}
-  \usepackage{textcomp}}{}}{}
+  \RequirePackage[T1]{fontenc}
+  \RequirePackage{textcomp}}{}}{}

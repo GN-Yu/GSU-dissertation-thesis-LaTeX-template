@@ -12,6 +12,16 @@
 
 \documentclass[12pt,gsu,online,openany,hidelinks]{gsudiss}
 % Remove the option "online" to produce a print version (page number at the center of the footer)
+\printdraft{\textcolor{gray}\small DRAFT}    % In order to use this
+                                   % command, you have to enable "drafts"
+                                   % in the option of the gsudiss
+                                   % class, otherwise it does
+                                   % nothing. This prints the word
+                                   % "DRAFT" in gray color in the header of your
+                                   % dissertation. You can go wild
+                                   % here if you want. Just make sure
+                                   % you disable the "drafts" option
+                                   % before final printing.
 
 \usepackage{natbib}
 % \usepackage{subfigure}                % To format bibliographies.
@@ -23,17 +33,6 @@
     colorlinks=false,
     pdfborder={0 0 0},
 }
-
-% You can set the fonts for each section of the TOC using options in the tocloft package
-\renewcommand{\cftfigfont}{Figure\ }
-\renewcommand{\cfttabfont}{Table\ }
-\renewcommand{\cftchapfont}{\bfseries}  % Set the font for the chapters in TOC
-\renewcommand{\cftsecfont}{\normalfont} % Set the font for the sections in TOC, e.g., you can change it to \renewcommand{\cftsecfont}{\bfseries}
-\renewcommand{\cftsubsecfont}{\itshape}  % Set the font for the subsections in TOC, e.g., you can change it to \renewcommand{\normalfont}
-\renewcommand{\cftsubsubsecfont}{\itshape}  % Set the font for the subsubsections in TOC
-\renewcommand{\cftparafont}{\mdseries}  % Set the font for the paragraphs in TOC
-\setcounter{tocdepth}{2}      % The depth of table of contents, the setting of 2 means it only goes to subsections, you can change it (e.g. 3 is to include subsubsections).
-
 
 \usepackage{lscape}
 \usepackage{array}
@@ -70,128 +69,23 @@
 \AfterBegin{equation*}{\addtolength{\abovedisplayskip}{-0.5\baselineskip}}
 \BeforeEnd{equation*}{\addtolength{\belowdisplayskip}{-0.5\baselineskip}}
 
-\renewcommand{\topfraction}{0.85}        % These modify figure placement on
-\renewcommand{\bottomfraction}{0.85}     % the page and various other space
-\renewcommand{\textfraction}{0.10}       % requirements for figures.
-\renewcommand{\floatpagefraction}{0.80}  % These 5 lines are not
-\renewcommand{\arraystretch}{0.5}        % necessary but I think its better
-                                         % than latex default.
-
-\setlength{\tabcolsep}{3pt}        % shrink column spacing so your tables 
-                                   % can be wider (yay Todd Tables)
-%\setlength{\LTcapwidth}{\textwidth}% so your rotated, normal-sized
-                                   % longtable titles won't wrap oddly.
 
 
-\clubpenalty=1000                  % Make Latex try hard to fix
-\widowpenalty=1000                 % "stray lines" in paragraphs,
-                                   % i.e. paragraph that begin at the
-                                   % last line of a page, or end with
-                                   % the last line on the following
-                                   % page. This looks silly.
-\raggedbottom
-
-\settocname{TABLE OF CONTENTS}              % Set the "Table of Contents"
-                                   % name. This is the default. You
-                                   % can use "Table of Contents" for example.
-
-\setlofname{LIST OF FIGURES}               % Change the name from 'List of
-                                   % Figures'. Use whatever you wish.
-
-\setlotname{LIST OF TABLES}                % Change the name from 'List of
-                                   % Tables'. Use whatever suit your
-                                   % fancy.
-
-\settocbibname{REFERENCES}         % Change the name from
-                                   % 'Bibliography'. Change it back if
-                                   % you feel like it.
-
-\setloaname{LIST OF ABBREVIATIONS}
-                                   % I Changed the name from 'List of
-                                   % Abbreviations'. Use any name that
-                                   % makes sense here. If you don't
-                                   % have an "abbreviations.tex" file,
-                                   % this command will do nothing.
-
-\setfigname{Figure\ }               % Set the caption labels for figures.
-
-\settabname{Table\ }                % Set the caption labels for tables.
-
-\setcapfont{pnc}                   % Set the caption font for
-                                   % both tables and figures.
-
-\chapternumsize{\normalsize}            % You can use any standard latex sizes here.
-\chapterheadsize{\normalsize}           % You can use any standard latex sizes here.
-\chaptertitlesize{\normalsize}           % You can use any standard latex sizes here.
-                                   % These defaults look good to me.
-
-\beforechapterheadname{CHAPTER}         % Optional text to put in front of
-                                   % the chapter number.
-\afterchapterheadname{}          % Optional text to put after the
-                                   % chapter number. The default
-                                   % looks like this: --1--. Of course
-                                   % you can change this to any
-                                   % format, for e.g. $\sim$
-
-\chapterheadpos{center}            % You can use 'right', 'left',
-                                   % 'center'.
-
-\chaptertitlepos{center}           % You can use 'right', 'left',
-                                   % 'center'
-
-\chapterheadverticalspace{-1em}     % The space between the Chapter head
-                                   % and the top of page. This distance
-                                   % is not absolute, but relative to
-                                   % the parameters set by the
-                                   % geometry package. Play around
-                                   % with this number to suit your needs.
-
-\chapterbetweentitlespace{-1.em}   % The space between the chapter head
-                                   % and the title head.
-
-\titleheadverticalspace{2em}       % The space between the title head
-                                   % and the text.
-
-\sectiontitlesize{\normalsize}          % This is obvious.
-\sectiontitlepos{left}             % Obvious.
-
-\sectiontitleverticalspace{1em}    % The space between the section head
-                                   % and the text.
-
-\subsectiontitlesize{\normalsize}       % Obvious.
-\subsectiontitlepos{left}          % Obvious.
-
-\subsectiontitleverticalspace{0.5em} % You get the idea...
-
-\subsubsectiontitlesize{\normalsize}
-\subsubsectiontitlepos{left}
-
-\subsubsectiontitleverticalspace{0.5em}
-
-\sepabbrev{7em}                    % The space between the abbreviation
-                                   % lists, that is, if you have
-                                   % one. Has to be >= 5em.
-
-\prettify{pnc}
-
-\printdraft{\textcolor{gray}\small DRAFT}    % In order to use this
-                                   % command, you have to enable "drafts"
-                                   % in the option of the gsudiss
-                                   % class, otherwise it does
-                                   % nothing. This prints the word
-                                   % "DRAFT" in gray color in the header of your
-                                   % dissertation. You can go wild
-                                   % here if you want. Just make sure
-                                   % you disable the draft option
-                                   % before final printing.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This is where you include the information of your thesis/dissertation
 
 \author(FirstName LastName)              % Name required.
 
+\graduationyear(Year)
+
+\graduationmonth(Month) % The Month and Year here must be the month and year of your graduation—not the month and year of your submission or upload.
+
 \title(Manuscript Title)    % Title of dissertation Required.
 
-\titlesize(12)(12)                               % This is for changing
+\titlesize(12)(12)                           % This is for changing
                                              % the default font size
-                                             % for your title. The
+                                             % for your title (for just
+                                             % the first page?). The
                                              % first argument is the
                                              % font size, the second
                                              % is the line spacing for
@@ -219,14 +113,14 @@
           (FirstName LastName)
           (FirstName LastName)%
 
-\graduationyear(Year)
-
-\graduationmonth(Month) % The Month and Year here must be the month and year of your graduation—not the month and year of your submission or upload.
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %               The dissertation starts here.                        %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{FormatCustomOptions}        % There are many places that's 
+                                   % required by the guidelines so
+                                   % you can customize. This file
+                                   % contains many the options that
+                                   % you can set (or just ignore).
 
 \input{usercommands}               % You can put some self-defined
                                    % commands in this file like
@@ -264,7 +158,7 @@
 \bibliographystyle{plain}           % Please learn to use the
                                     % formatting of Latex's Bibtex. It
                                     % will make your life easier.
-\bibliography{mybibliography.bib}   % "mybibliography.bib" contains some
+\bibliography{mybibliography}       % "mybibliography.bib" contains some
                                     % reference examples.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
