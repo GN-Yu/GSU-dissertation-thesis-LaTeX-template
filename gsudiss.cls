@@ -1,21 +1,24 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%        gsudiss.sty (July 2006)----Varendra Das, GSU
-%        das@chara.gsu.edu
-%        This style file should be used for the on-line submission of
+%        gsudiss.cls (June 2024)
+%        This class file should be used for the on-line submission of
 %        your dissertation.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% This Dissertation style file was developed for the College Arts &
-% Sciences department, Georgia State University, by Varendra Das, for
-% graduation during the Summer, 2006. This file is made up of various
+% This GSU Thesis/Dissertation class file originated from a style file
+% that was first developed for the College of Arts &
+% Sciences, Georgia State University, by Varendra Das, for his
+% graduation during the Summer, 2006. It must have experienced many 
+% editions by generations of GSU graduates. There was a major update in
+% June 2024 to make it more user-friendly, by Guoning Yu, also for 
+% his graduation during the Summer, 2024. This file is made up of various
 % macros and packages to make the outline and formatting of your
-% dissertation easier. It is by no means \applicable to the entire
+% dissertation easier. It is by no means applicable to the entire
 % Georgia State System. Those of you who want to use latex to prepare
 % your dissertation, and who are not from the College of Arts &
-% Sciences, however, can use this style file as a guide to make their
+% Sciences, however, can use this file as a guide to make their
 % own. This file is developed to allow a wide range of formating
 % options, but users should bare in mind that the dissertation guide
 % allows limited formatting, other than that which is used in the
-% default dissertation.tex file. Note: This style file does not guarantee the
+% default dissertation.tex file. Note: This file does not guarantee the
 % satisfaction of all requirements specified by the College of Arts and
 % Sciences, Georgia State University. Styles change on a yearly basis
 % and it is up to you (the writer or author) to follow all the
@@ -28,22 +31,23 @@
 % file and should not be deleted or commented out, unless you know
 % exactly what you are doing.
 \NeedsTeXFormat{LaTeX2e}[2005/07/01]
-\ProvidesClass{gsudiss}[2006/07/01]
+\ProvidesClass{gsudiss}[2024/06/01]
 \typeout{}
 \typeout{++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++}
-\typeout{Dissertation class file (gsudiss.cls) version 1.00, July 2006}
-\typeout{for Georgia State University Ph.D. dissertations.}
+\typeout{Dissertation class file (gsudiss.cls) version 2.00, June 2024}
+\typeout{for Georgia State University thesis or dissertations.}
 \typeout{This class file was developed to conform to the requirements}
 \typeout{of the Graduate Office for the College of Arts and Sciences}
-\typeout{at Georgia State University for the year 2006. Since the}
+\typeout{at Georgia State University for the year 2024. Since the}
 \typeout{requirements change slightly from year to year, it is up to the}
-\typeout{writer/author of his/her dissertation to make sure that such}
-\typeout{requirements are always met. The author of this class file}
+\typeout{writer/author of his/her thesis/dissertation to make sure that}
+\typeout{such requirements are always met. The author of this class file}
 \typeout{will not accept any responsibility for failed requirements}
 \typeout{due to the usage of this class file.}
 \typeout{++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++}
-\typeout{URL: http://www.chara.gsu.edu/(tilde)das/gsudiss.cls}
-\typeout{email: das@chara.gsu.edu}
+% \typeout{URL: http://www.chara.gsu.edu/(tilde)das/gsudiss.cls}
+% \typeout{email: das@chara.gsu.edu}
+% These contacts don't exist anymore. Please contact the GSU Graduate Office for any questions. You are also welcome to ask questions about this template or general LaTeX questions at 'i.ygn97@gmail.com'.
 \typeout{}
 
 \RequirePackage{calc}
@@ -110,6 +114,7 @@
   {\def\geo{yes}\PassOptionsToClass{openany}{report}}{}
 }
 \PassOptionsToClass{openany}{report}
+
 \ProcessOptions
 \LoadClass{report}
 

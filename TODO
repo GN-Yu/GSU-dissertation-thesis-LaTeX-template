@@ -1,31 +1,26 @@
-Some tasks:
-1. Move `.sty` file to a folder? Or better just make every package being included as up-to-date ones
-2. Separate the style of doctoral dissertation and master's thesis?
-3. 
-4. Investigate `\mathbb` font, and if `\itshape`is the itshape of the normal font.
-5. figures and tables format
-6. check if he `\hspace*{1cm}` in front of both dedication and acknowledgement is the same as the document indent
-7. Although it is mentioned in the guidebook that a preface is optional as the last thing in the front matter, there is no example so I did not write it in the template yet
-8. Improper page number position for print version - both "online" and not "online" page layout needs adjusting
-9. Ask the formatting team -- if the abstract takes two pages, should the dedication page be still numbered as "iv"? (In the template, it is hard-set in `.cls` file.)
-10. Investigate the `drafts` option of the document
-11. sort and annotate `FormatCustomizeOptions.tex`
+## Some tasks:
+1. Make a double page printable version. Improper page number position for print version - both "online" and not "online" page layout needs adjusting
+2. Double check figures and tables format
+3. Check if he `\hspace*{1cm}` in front of both dedication and acknowledgement is the same as the document indent
+4. Investigate `\mathbb` font, and if `\itshape`is the itshape of the normal font. (It may come from `eucal` package.)
+5. Sort and annotate `FormatCustomizeOptions.tex`
+6. Replace the example citation
+7. Investigate table/figure caption position
+8. The document class option `gsu` should be removed
 
-Some thoughts:
-1. The whole document can be a user manual. Instructions and examples can be written in the chapters.
-2. Deleting `.bib` file most of the times solves the problem of bibliography. Not sure why there is problem
-3. Separate "what you can customize", "what is recommended", and "what is required" in `main.tex`
-4. Make a beautiful, customizable version for printings
+## Some thoughts may be improved in the future:
+1. The whole document can be a user manual. More instructions and examples can be written in the chapters.
+2. Separate "what you can customize", "what is recommended", and "what is required" in `main.tex`
+3. Make a beautiful, customizable version for printings (by enabling `beautifulbinding` option).
+4. Move `.sty` file to a folder? Or better just make every package being included as up-to-date ones. Or just leave them as-is because they could be useful.
 
-Examples and instructions include:
-1. reference to chapters and sections, recommend, \chap\ref{chap:label}
-2. citations
-3. how to include figures
-4. how to include tables
+## Need to confirm with formatting team:
+1. Although it is mentioned in the guidebook that a preface is optional as the last thing in the front matter, there is no example provided so I did not write it in the template yet.
+2. If the abstract takes two pages, should the dedication page be still numbered as "iv"? (In the template, it is hard-set in `.cls` file.)
 
-At release:
-1. Change the typeout at release
+## At release:
+1. Change the typeout in `.cls` file
 2. Change the beginning of the main.tex
 3. Hide or remove `legacy` folder
-4. Release both in `.zip` and as overleaf template
+4. Release both in `.zip` and as overleaf template, and maybe CTAN
 

@@ -1,9 +1,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%  dissertation.tex, to be compiled with latex2e.                   %
-%%  16 April 2012                                                    %
+%%  Template update 06/01/2024                                       %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                                                   %
-%%  Writing a Doctoral Dissertation with LaTeX at                    %
+%%  Writing a Thesis or Dissertation with LaTeX at                   %
 %%           Georgia State University                                %
 %%                                                                   %
 %%  (Running this ``template'' will generate the documentation.)     %
@@ -23,28 +23,25 @@
                                    % you disable the "drafts" option
                                    % before final printing.
 
-\usepackage{natbib}
-% \usepackage{subfigure}                % To format bibliographies.
+\usepackage{natbib}                % To format bibliographies.
 \setlength{\bibsep}{0pt}           % Necessary for bib entries to have
                                    % correct line spacing.
 
 \usepackage[hidelinks]{hyperref}
-\hypersetup{
-    colorlinks=false,
-    pdfborder={0 0 0},
-}
+\hypersetup{colorlinks=false,pdfborder={0 0 0}} % Remove the red boxes around the links
 
 \usepackage{lscape}
 \usepackage{array}
 \usepackage{deluxetable}
-\usepackage{longtable,ltcaption}
-\usepackage{float}
-\usepackage[caption = true]{subfig}
+\usepackage{longtable}             % for 'longtable' environment
+\usepackage{pdflscape}             % for 'landscape' environment
+\usepackage{ltcaption}
 % The ltcaption package supports \CaptionLabelFont & \CaptionTextFont
 % introduced by the NTG document classes
 \renewcommand\CaptionLabelFont{\normalsize}
 \renewcommand\CaptionTextFont{\normalsize}
 
+\usepackage[caption = true]{subfig}% for subfigures
 \usepackage{amsmath,amsthm,amsfonts,amsopn,amssymb} % Some nice math packages.
 \usepackage{eucal}                 % Euler fonts for equations.
 \usepackage{verbatim}              % Allows quoting source with commands.
@@ -53,8 +50,6 @@
 \usepackage[overlay]{textpos}      % Put stuff anywhere, I mean anywhere ...
 \usepackage{pstricks}              % Draw stuff especially on top figures etc...
 \usepackage{afterpage}             % Useful for absolute placement of figures and tables.
-\usepackage{longtable}             % for 'longtable' environment
-\usepackage{pdflscape}             % for 'landscape' environment
 \usepackage{fancyvrb}              % for verbatim environments (see usercommands.tex)
 
 \usepackage{float}
@@ -100,7 +95,7 @@
 
 \input{usercommands}               % You can put some self-defined
                                    % commands in this file like
-                                   % math abbreviations, etc.
+                                   % math command abbreviations, etc.
 
 
 \begin{document}
@@ -110,15 +105,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%% The front matter of your document %%%%%%%%%%%%%%%
-% The front matters include copyright page (required), approval page (required), dedication (optional), acknowledgments (optional), table of contents (required), list of tables(required and generated automatically if tables used), list of figures (required and generated automatically if figures used), list of abbreviations (optional), and preface (optional) 
-
 
 % Tile and abstract pages are required. To edit your title and abstract pages, go to `./FrontMatters/TitleAbstract.tex' file.
 \include{./FrontMatters/TitleAbstract}
 
 \frontmatter % This line is supposed to be here.
 
-% The title page is required. To edit your name and year, please go to \author()
+% The copyright page is required. To edit your name and year, please go to \author()
 \copyrightpage
 
 % The approval page is required. To edit the committee and other information, please go to \committeeChair(), \committeeCoChair(), \committee(), etc.
@@ -146,10 +139,11 @@
 %%%%%%%%%%%%%%%%%%%% The main chapters %%%%%%%%%%%%%%%%%%%%%
 
 \pagestyle{plain}
+
 \mainmatter                        % Main chapters starts here
 
 % The chapter order is determined by the order of the \include commands below.
-
+% Edit the chapter contents in the respective files in the `./Chapters/` directory. You can add more chapters by adding more files and more \include commands below.
 \include{./Chapters/Introduction}
 \include{./Chapters/Chapter_2}
 \include{./Chapters/Chapter_3}
@@ -159,17 +153,16 @@
 
 \appendix
 
-\include{./BackMatters/Appendix} % Use this file if you have only one appendix.
-% \include{./BackMatters/Appendices} % Use this file if you have more than one appendices.
+% Choose one of the following two options. If you have only one appendix, use the first option. If you have more than one appendices, use the second option. Edit the appendix contents in the respective files in the `./BackMatters/` directory.
+\include{./BackMatters/Appendix}
+% \include{./BackMatters/Appendices}
 
 
-% The bibliography starts here.
+% The bibliography starts here. Please learn to use the formatting of Latex's Bibtex. It is very powerful and will make your life easier.
 % Format the entries according to your department or discipline’s choice of style manual.
-\bibliographystyle{plain}           % Please learn to use the
-                                    % formatting of Latex's Bibtex. It
-                                    % will make your life easier.
-\bibliography{mybibliography}       % "mybibliography.bib" contains some
-                                    % reference examples.
+% "mybibliography.bib" contains some Bibtex item examples.
+\bibliographystyle{plain}
+\bibliography{mybibliography}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                  The document ends here.                           %
