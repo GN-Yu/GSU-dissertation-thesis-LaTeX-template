@@ -10,8 +10,14 @@
 %%                                                                   %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[12pt,gsu,online,openany,hidelinks]{gsudiss}
-% Remove the option "online" to produce a print version (page number at the center of the footer)
+\documentclass[12pt,gsu,online]{gsudiss}
+% The class file gsudiss.cls is based on the standard report class.
+% The body of the text must be in font size either 11pt or 12pt.
+% The option 'gsu' is for required line spacing.
+% The option 'online' is for the online submission formatting, you should keep this option unless you are preparing a print version of your dissertation.
+% You can remove the option "online" to produce a print version which has page number at the center of the footer by default. You can also add one of the options from {'', ''} for customizing the page number location. 
+
+% There is also a draft mode option that can be used to print the word "DRAFT" (or other words defined in the following command) in the header of your dissertation. To enable this option, you can add the option 'drafts' to the class file. Just make sure you disable the "drafts" option before submission.
 \printdraft{\textcolor{gray}\small DRAFT}    % In order to use this
                                    % command, you have to enable "drafts"
                                    % in the option of the gsudiss
@@ -19,9 +25,11 @@
                                    % nothing. This prints the word
                                    % "DRAFT" in gray color in the header of your
                                    % dissertation. You can go wild
-                                   % here if you want. Just make sure
-                                   % you disable the "drafts" option
-                                   % before final printing.
+                                   % here if you want. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Below is where you include your packages. Add or remove packages as needed.
 
 \usepackage{natbib}                % To format bibliographies.
 \setlength{\bibsep}{0pt}           % Necessary for bib entries to have
@@ -64,10 +72,11 @@
 \AfterBegin{equation*}{\addtolength{\abovedisplayskip}{-0.5\baselineskip}}
 \BeforeEnd{equation*}{\addtolength{\belowdisplayskip}{-0.5\baselineskip}}
 
+\usepackage{lipsum}                % For generating dummy text in the template.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%           Fill out some dissertation info first.                   %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Below is where you include your thesis/dissertation info.
 
 \author(FirstName LastName) % Your name.
 
@@ -76,13 +85,12 @@
 
 \title(Manuscript Title) % The title of your dissertation/thesis.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % Information of your committee members. I have five members as an example below.
 % Only the first and last name of your committee members should be listed here. Please do not include their titles. In other words, do not list “Dr.” or “Ph.D.” here. 
+\committeeChair(FirstName LastName1) % Committee CHAIR. This has to be non-empty to compile correctly.
 
-\committeeChair(FirstName LastName1) % Committee CHAIR's First Name Last Name. This has to be non-empty to compile correctly.
-
-\committeeCoChair() % Committee CO-CHAIR's First Name Last Name. This is useful if you have two advisors. If you do not have a co-chair, you can leave this field empty.
+\committeeCoChair() % Committee CO-CHAIR. This is useful if you have two advisors. If you do not have a co-chair, you can leave this field empty.
 
 \committee(FirstName LastName2)(FirstName LastName3)(FirstName LastName4)(FirstName LastName5) % Other Committee Members. There has to be at least one to compile correctly. Just add more parentheses for more committee members.
 

@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %        gsudiss.cls (June 2024)
-%        This class file should be used for the on-line submission of
+%        This class file should be used for the online submission of
 %        your dissertation.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % This GSU Thesis/Dissertation class file originated from a style file
@@ -32,6 +32,7 @@
 % exactly what you are doing.
 \NeedsTeXFormat{LaTeX2e}[2005/07/01]
 \ProvidesClass{gsudiss}[2024/06/01]
+
 \typeout{}
 \typeout{++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++}
 \typeout{Dissertation class file (gsudiss.cls) version 2.00, June 2024}
@@ -51,21 +52,22 @@
 \typeout{}
 
 \RequirePackage{calc}
-\RequirePackage{setspace}
 \RequirePackage{ifthen}
+
+\RequirePackage{setspace} % for line spacing like \gsuspacing, \doublespacing, etc.
 \let\lspace\gsuspacing
 \def\abbrevskip{2.000}
+
+\newlength{\linespace}
+\newlength{\addedspace}
+
 \def\draftmode{no}
 \def\print@draft{}
 \def\fontify{}
 \def\geo{no}
-\def\onlinesubmission{yes}
+\def\onlinesubmission{no}
 \def\chapterpage@number{bottom}
-\DeclareOption{online}{%
-  \def\onlinesubmission{yes}
-  \def\chapterpage@number{top}}
-\newlength{\linespace}
-\newlength{\addedspace}
+
 \DeclareOption{dayroman}{%
   \def\fontify{day}}
 \DeclareOption{bookman}{%
@@ -84,6 +86,10 @@
   \def\fontify{ptm}}
 \DeclareOption{charter}{%
   \def\fontify{bch}}
+
+\DeclareOption{online}{%
+  \def\onlinesubmission{yes}
+  \def\chapterpage@number{top}}
 \DeclareOption{drafts}{%
   \def\draftmode{yes}}
 \DeclareOption{pagenumtop}{%
@@ -113,6 +119,7 @@
   \ifthenelse{\equal{\onlinesubmission}{yes}}
   {\def\geo{yes}\PassOptionsToClass{openany}{report}}{}
 }
+
 \PassOptionsToClass{openany}{report}
 
 \ProcessOptions
@@ -128,6 +135,7 @@
   bindingoffset=0.0in,left=1.0in,right=1.in,%
   width=6.in,includemp,marginparwidth=0.in,marginparsep=0.in,%
   top=1.5in,bottom=1.0in,headsep=0.375in,headheight=0.125in}
+
 \RequirePackage[nottoc]{tocbibind}
 \RequirePackage{tabto}
 \RequirePackage{xspace}

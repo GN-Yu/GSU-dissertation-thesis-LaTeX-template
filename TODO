@@ -1,12 +1,12 @@
 ## Some tasks:
 1. Make a double page printable version. Improper page number position for print version - both "online" and not "online" page layout needs adjusting
 2. Double check figures and tables format
-3. Check if he `\hspace*{1cm}` in front of both dedication and acknowledgement is the same as the document indent
+3. 
 4. Investigate `\mathbb` font, and if `\itshape`is the itshape of the normal font. (It may come from `eucal` package.)
 5. Sort and annotate `FormatCustomizeOptions.tex`
 6. Replace the example citation
 7. Investigate table/figure caption position
-8. The document class option `gsu` should be removed
+8. Title page auto-generation
 
 ## Some thoughts may be improved in the future:
 1. The whole document can be a user manual. More instructions and examples can be written in the chapters.
