@@ -22,8 +22,8 @@
 % satisfaction of all requirements specified by the College of Arts and
 % Sciences, Georgia State University. Styles change on a yearly basis
 % and it is up to you (the writer or author) to follow all the
-% guidelines specified in the ``Dissertation Preparation Guideline'' for
-% the College of Arts and Sciences, and any other formatting or
+% guidelines specified in the ``Thesis/Dissertation Formatting Guidebook''
+% for the College of Arts and Sciences, and any other formatting or
 % requirements specified by your department.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -35,7 +35,7 @@
 
 \typeout{}
 \typeout{++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++}
-\typeout{Dissertation class file (gsudiss.cls) version 2.00, June 2024}
+\typeout{Dissertation class file (gsudiss.cls) version 1.1.0, June 2024}
 \typeout{for Georgia State University thesis or dissertations.}
 \typeout{This class file was developed to conform to the requirements}
 \typeout{of the Graduate Office for the College of Arts and Sciences}

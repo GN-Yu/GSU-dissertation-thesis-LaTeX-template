@@ -10,7 +10,7 @@ Goal:
 
 ## Usage
 
-A good way to use this repo may not be forking it, because you don't want your dissertation/thesis to be public in the when you are writing it. Please download it as a `.zip` file to use it locally, and maybe upload to your own private git repo for better version control. But if you want to help make this template better, please feel free to fork, raise issues, or submit a PR.
+A good way to use this repo may not be forking it, because you don't want your dissertation/thesis to be public in the when you are writing it. Please download it as a `.zip` file to use it locally, and maybe upload to your own private git repo for better version control. If you prefer to use Overleaf, you can also upload the zipped files there. But if you want to help make this template better, please feel free to fork, raise issues, or submit a PR.
 
 ## A tip
 
@@ -26,7 +26,6 @@ The current version is a side product of writing my own dissertation written up 
 
 ## Notes
 
-This file does not guarantee the satisfaction of all requirements specified by the College of Arts and Sciences, Georgia State University. Styles change on a yearly basis and it is up to you (the writer or author) to follow all the guidelines specified in the ``Thesis/Dissertation Formatting Guidebook'' for the College of Arts and Sciences, and any other formatting or requirements specified by your department.
+This file does not guarantee the satisfaction of all requirements specified by the College of Arts and Sciences, Georgia State University. Styles change on a yearly basis and it is up to the writer or author to follow all the guidelines specified in the ``Thesis/Dissertation Formatting Guidebook'' for the College of Arts and Sciences, and any other formatting or requirements specified by your department.
 
-Moreover, it is by no means applicable to the entire Georgia State System. Those of you who want to use LaTeX to prepare your dissertation, and who are not from the College of Arts & Sciences, however, can use this template as a guide to make their own. This template is developed to allow a wide range of formatting options, but users should bare in mind that the dissertation guide allows limited formatting, other than that which is used by
-default. 
+Moreover, it is by no means applicable to the entire Georgia State System. Those of you who want to use LaTeX to prepare your dissertation, and who are not from the College of Arts & Sciences, however, can use this template as a guide to make their own. This template is developed to allow a wide range of formatting options, but users should bare in mind that the dissertation guide allows limited formatting, other than that which is used by default. 
