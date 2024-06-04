@@ -1,12 +1,10 @@
 ## Some tasks:
 1. Make a double page printable version. Improper page number position for print version - both "online" and not "online" page layout needs adjusting
 2. Double check figures and tables format
-3. 
+3. Investigate table/figure caption position
 4. Investigate `\mathbb` font, and if `\itshape`is the itshape of the normal font. (It may come from `eucal` package.)
 5. Sort and annotate `FormatCustomizeOptions.tex`
-6. Replace the example citation
-7. Investigate table/figure caption position
-8. Title page auto-generation
+6. Title page auto-generation
 
 ## Some thoughts may be improved in the future:
 1. The whole document can be a user manual. More instructions and examples can be written in the chapters.
