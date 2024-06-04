@@ -4,21 +4,21 @@
 %        your dissertation.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % This GSU Thesis/Dissertation class file originated from a style file
-% that was first developed for the College of Arts &
-% Sciences, Georgia State University, by Varendra Das, for his
-% graduation during the Summer, 2006. It must have experienced many 
-% editions by generations of GSU graduates. There was a major update in
-% June 2024 to make it more user-friendly, by Guoning Yu, also for 
+% that was first developed for the College of Arts & Sciences, Georgia 
+% State University, by Varendra Das, for his graduation during the
+% Summer, 2006. It must have experienced many editions by generations
+% of GSU graduates. There was a major update in June 2024 to fix issues
+% and to make it more user-friendly, by Guoning Yu, when he used it for 
 % his graduation during the Summer, 2024. This file is made up of various
 % macros and packages to make the outline and formatting of your
 % dissertation easier. It is by no means applicable to the entire
 % Georgia State System. Those of you who want to use latex to prepare
 % your dissertation, and who are not from the College of Arts &
 % Sciences, however, can use this file as a guide to make their
-% own. This file is developed to allow a wide range of formating
+% own. This file is developed to allow a wide range of formatting
 % options, but users should bare in mind that the dissertation guide
 % allows limited formatting, other than that which is used in the
-% default dissertation.tex file. Note: This file does not guarantee the
+% default files. Note: This template does not guarantee the
 % satisfaction of all requirements specified by the College of Arts and
 % Sciences, Georgia State University. Styles change on a yearly basis
 % and it is up to you (the writer or author) to follow all the

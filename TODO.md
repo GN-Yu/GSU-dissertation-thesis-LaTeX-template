@@ -1,5 +1,5 @@
 ## Some tasks:
-1. Make a double page printable version. Improper page number position for print version - both "online" and not "online" page layout needs adjusting
+1. Make a double page printable version. Improper page number position for print version - both "online" and not "online" page layout needs adjusting. "EXCEPTION: Page numbers inserted into the footer may fall below the 1-inch margin. " in the guidebook.
 2. Double check figures and tables format
 3. Investigate table/figure caption position
 4. Investigate `\mathbb` font, and if `\itshape`is the itshape of the normal font. (It may come from `eucal` package.)
@@ -19,6 +19,6 @@
 ## At release:
 1. Change the typeout in `.cls` file
 2. Change the beginning of the main.tex
-3. Hide or remove `legacy` folder
+3. Hide or remove `legacy` folder because they are from previous versions of this template which may not be useful
 4. Release both in `.zip` and as overleaf template, and maybe CTAN
 
