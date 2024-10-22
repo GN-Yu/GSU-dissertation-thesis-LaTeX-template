@@ -683,6 +683,8 @@
   \else
   \@restonecolfalse
   \fi
+  % \cleardoublepage % Ensure a new page
+  \pagestyle{plain} % Set page style to plain to include page numbers
   \chapter*{%
     \contentsname
     \@mkboth{%
